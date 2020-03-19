@@ -5,9 +5,9 @@
   <subtitle>云澜生处，若见君</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://blog.canglan.top/"/>
   <updated>2020-03-19T08:07:16.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://blog.canglan.top/</id>
   
   <author>
     <name>canglan</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>MarkdownHTML</title>
-    <link href="http://yoursite.com/2020/03/19/MarkdownHTML/"/>
-    <id>http://yoursite.com/2020/03/19/MarkdownHTML/</id>
+    <link href="http://blog.canglan.top/2020/03/19/MarkdownHTML/"/>
+    <id>http://blog.canglan.top/2020/03/19/MarkdownHTML/</id>
     <published>2020-03-19T08:07:16.000Z</published>
     <updated>2020-03-19T08:07:16.000Z</updated>
     
@@ -36,19 +36,19 @@
     </summary>
     
     
-      <category term="Language" scheme="http://yoursite.com/categories/Language/"/>
+      <category term="Language" scheme="http://blog.canglan.top/categories/Language/"/>
     
     
-      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://blog.canglan.top/tags/Markdown/"/>
     
-      <category term="HMTL" scheme="http://yoursite.com/tags/HMTL/"/>
+      <category term="HMTL" scheme="http://blog.canglan.top/tags/HMTL/"/>
     
   </entry>
   
   <entry>
     <title>MarkdownTest</title>
-    <link href="http://yoursite.com/2020/03/18/MarkdownTest/"/>
-    <id>http://yoursite.com/2020/03/18/MarkdownTest/</id>
+    <link href="http://blog.canglan.top/2020/03/18/MarkdownTest/"/>
+    <id>http://blog.canglan.top/2020/03/18/MarkdownTest/</id>
     <published>2020-03-18T15:29:49.000Z</published>
     <updated>2020-03-18T15:29:49.000Z</updated>
     
@@ -63,17 +63,17 @@
     </summary>
     
     
-      <category term="Language" scheme="http://yoursite.com/categories/Language/"/>
+      <category term="Language" scheme="http://blog.canglan.top/categories/Language/"/>
     
     
-      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://blog.canglan.top/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/03/18/hello-world/"/>
-    <id>http://yoursite.com/2020/03/18/hello-world/</id>
+    <link href="http://blog.canglan.top/2020/03/18/hello-world/"/>
+    <id>http://blog.canglan.top/2020/03/18/hello-world/</id>
     <published>2020-03-18T10:15:21.761Z</published>
     <updated>2020-03-18T10:15:21.761Z</updated>
     
