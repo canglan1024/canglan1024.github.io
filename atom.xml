@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-18T10:15:21.761Z</updated>
+  <updated>2020-03-18T15:29:49.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MarkdownTest</title>
+    <link href="http://yoursite.com/2020/03/18/MarkdownTest/"/>
+    <id>http://yoursite.com/2020/03/18/MarkdownTest/</id>
+    <published>2020-03-18T15:29:49.000Z</published>
+    <updated>2020-03-18T15:29:49.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Markdown基础语法与测试&quot;&gt;&lt;a href=&quot;#Markdown基础语法与测试&quot; class=&quot;headerlink&quot; title=&quot;Markdown基础语法与测试&quot;&gt;&lt;/a&gt;Markdown基础语法与测试&lt;/h1&gt;&lt;h2 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h2&gt;&lt;p&gt;文字前加#设置标题&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 一级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## 二级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;### 三级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#### 四级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;##### ……&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h1 id=&quot;一级标题&quot;&gt;&lt;a href=&quot;#一级标题&quot; class=&quot;headerlink&quot; title=&quot;一级标题&quot;&gt;&lt;/a&gt;一级标题&lt;/h1&gt;&lt;h2 id=&quot;二级标题&quot;&gt;&lt;a href=&quot;#二级标题&quot; class=&quot;headerlink&quot; title=&quot;二级标题&quot;&gt;&lt;/a&gt;二级标题&lt;/h2&gt;&lt;h3 id=&quot;三级标题&quot;&gt;&lt;a href=&quot;#三级标题&quot; class=&quot;headerlink&quot; title=&quot;三级标题&quot;&gt;&lt;/a&gt;三级标题&lt;/h3&gt;&lt;h4 id=&quot;四级标题&quot;&gt;&lt;a href=&quot;#四级标题&quot; class=&quot;headerlink&quot; title=&quot;四级标题&quot;&gt;&lt;/a&gt;四级标题&lt;/h4&gt;&lt;h5 id=&quot;……&quot;&gt;&lt;a href=&quot;#……&quot; class=&quot;headerlink&quot; title=&quot;……&quot;&gt;&lt;/a&gt;……&lt;/h5&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Language" scheme="http://yoursite.com/categories/Language/"/>
+    
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -29,7 +54,7 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;h1 id=&quot;Hello-Word&quot;&gt;&lt;a href=&quot;#Hello-Word&quot; class=&quot;headerlink&quot; title=&quot;Hello Word!&quot;&gt;&lt;/a&gt;Hello
         
       
     
