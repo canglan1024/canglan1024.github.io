@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GitPagesCNAME</title>
+    <url>/2020/03/19/GitPageCNAME/</url>
+    <content><![CDATA[<h1 id="使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效"><a href="#使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效" class="headerlink" title="使用CNAME文件解决Hexo发布后GitHub Pages自定义域名失效"></a>使用CNAME文件解决Hexo发布后GitHub Pages自定义域名失效</h1><p>使用Hexo将博客托管到GitHub Pages，每次使用 <code>hexo deploy</code> 发布后，使用原域名访问博客出现404  </p>
+<p>检查Settings-Github Pages下的Custom domain，发现原自定义域名被清空，重新填入后恢复访问  </p>
+<p>为了解决这种情况，可在source文件夹下新建CNAME文件，文件内填入自定义域名，重新发布  </p>
+<p><strong>注意：CNAME文件无后缀，文件内容仅填入域名</strong></p>
+<hr>
+<blockquote>
+<p>Hexo: 4.2.0<br>OS: Win10 1909</p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHubPages</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MarkdownHTML</title>
     <url>/2020/03/19/MarkdownHTML/</url>
     <content><![CDATA[<h1 id="Markdown-HTML-标签"><a href="#Markdown-HTML-标签" class="headerlink" title="Markdown HTML 标签"></a>Markdown HTML 标签</h1><p>Markdown可以解析HMTL标签，因此可以使用HTML标签实现Markdown基本语法，同时实现一些Markdown不支持的功能</p>

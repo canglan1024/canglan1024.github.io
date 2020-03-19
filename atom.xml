@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.canglan.top/"/>
-  <updated>2020-03-19T08:07:16.000Z</updated>
+  <updated>2020-03-19T09:34:08.000Z</updated>
   <id>http://blog.canglan.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitPagesCNAME</title>
+    <link href="http://blog.canglan.top/2020/03/19/GitPageCNAME/"/>
+    <id>http://blog.canglan.top/2020/03/19/GitPageCNAME/</id>
+    <published>2020-03-19T09:34:08.000Z</published>
+    <updated>2020-03-19T09:34:08.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效&quot;&gt;&lt;a href=&quot;#使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://blog.canglan.top/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://blog.canglan.top/tags/Hexo/"/>
+    
+      <category term="GitHubPages" scheme="http://blog.canglan.top/tags/GitHubPages/"/>
+    
+  </entry>
   
   <entry>
     <title>MarkdownHTML</title>
