@@ -5,9 +5,9 @@
   <subtitle>云澜生处，若见君</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.canglan.top/"/>
+  <link href="https://canglan.tech/"/>
   <updated>2020-03-19T09:34:08.000Z</updated>
-  <id>http://blog.canglan.top/</id>
+  <id>https://canglan.tech/</id>
   
   <author>
     <name>canglan</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>GitPagesCNAME</title>
-    <link href="http://blog.canglan.top/2020/03/19/GitPageCNAME/"/>
-    <id>http://blog.canglan.top/2020/03/19/GitPageCNAME/</id>
+    <link href="https://canglan.tech/2020/03/19/GitPageCNAME/"/>
+    <id>https://canglan.tech/2020/03/19/GitPageCNAME/</id>
     <published>2020-03-19T09:34:08.000Z</published>
     <updated>2020-03-19T09:34:08.000Z</updated>
     
@@ -36,19 +36,19 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://blog.canglan.top/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://canglan.tech/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://blog.canglan.top/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://canglan.tech/tags/Hexo/"/>
     
-      <category term="GitHubPages" scheme="http://blog.canglan.top/tags/GitHubPages/"/>
+      <category term="GitHubPages" scheme="https://canglan.tech/tags/GitHubPages/"/>
     
   </entry>
   
   <entry>
     <title>MarkdownHTML</title>
-    <link href="http://blog.canglan.top/2020/03/19/MarkdownHTML/"/>
-    <id>http://blog.canglan.top/2020/03/19/MarkdownHTML/</id>
+    <link href="https://canglan.tech/2020/03/19/MarkdownHTML/"/>
+    <id>https://canglan.tech/2020/03/19/MarkdownHTML/</id>
     <published>2020-03-19T08:07:16.000Z</published>
     <updated>2020-03-19T08:07:16.000Z</updated>
     
@@ -65,19 +65,19 @@
     </summary>
     
     
-      <category term="Language" scheme="http://blog.canglan.top/categories/Language/"/>
+      <category term="Language" scheme="https://canglan.tech/categories/Language/"/>
     
     
-      <category term="Markdown" scheme="http://blog.canglan.top/tags/Markdown/"/>
+      <category term="Markdown" scheme="https://canglan.tech/tags/Markdown/"/>
     
-      <category term="HTML" scheme="http://blog.canglan.top/tags/HTML/"/>
+      <category term="HTML" scheme="https://canglan.tech/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>MarkdownTest</title>
-    <link href="http://blog.canglan.top/2020/03/18/MarkdownTest/"/>
-    <id>http://blog.canglan.top/2020/03/18/MarkdownTest/</id>
+    <link href="https://canglan.tech/2020/03/18/MarkdownTest/"/>
+    <id>https://canglan.tech/2020/03/18/MarkdownTest/</id>
     <published>2020-03-18T15:29:49.000Z</published>
     <updated>2020-03-18T15:29:49.000Z</updated>
     
@@ -92,17 +92,17 @@
     </summary>
     
     
-      <category term="Language" scheme="http://blog.canglan.top/categories/Language/"/>
+      <category term="Language" scheme="https://canglan.tech/categories/Language/"/>
     
     
-      <category term="Markdown" scheme="http://blog.canglan.top/tags/Markdown/"/>
+      <category term="Markdown" scheme="https://canglan.tech/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blog.canglan.top/2020/03/18/hello-world/"/>
-    <id>http://blog.canglan.top/2020/03/18/hello-world/</id>
+    <link href="https://canglan.tech/2020/03/18/hello-world/"/>
+    <id>https://canglan.tech/2020/03/18/hello-world/</id>
     <published>2020-03-18T10:15:21.761Z</published>
     <updated>2020-03-18T10:15:21.761Z</updated>
     
