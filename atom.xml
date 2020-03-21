@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://canglan.tech/"/>
-  <updated>2020-03-19T09:34:08.000Z</updated>
+  <updated>2020-03-21T07:48:54.000Z</updated>
   <id>https://canglan.tech/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MarkdownAdvance</title>
+    <link href="https://canglan.tech/2020/03/21/MarkdownAdvance/"/>
+    <id>https://canglan.tech/2020/03/21/MarkdownAdvance/</id>
+    <published>2020-03-21T07:48:54.000Z</published>
+    <updated>2020-03-21T07:48:54.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Markdown-高级功能&quot;&gt;&lt;a href=&quot;#Markdown-高级功能&quot; class=&quot;headerlink&quot; title=&quot;Markdown 高级功能&quot;&gt;&lt;/a&gt;Markdown 高级功能&lt;/h1&gt;&lt;h2 id=&quot;1-符号转义&quot;&gt;&lt;a href=&quot;#1-符号转义&quot; class=&quot;headerlink&quot; title=&quot;1.符号转义&quot;&gt;&lt;/a&gt;1.符号转义&lt;/h2&gt;&lt;p&gt;Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号&lt;code&gt;\&lt;/code&gt;，同时通过该符号所设置的格式也不会被解析。  &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;**加粗**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;\*\*转义\*\*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;加粗&lt;/strong&gt;&lt;br&gt;**转义**  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Language" scheme="https://canglan.tech/categories/Language/"/>
+    
+    
+      <category term="Markdown" scheme="https://canglan.tech/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>GitPagesCNAME</title>

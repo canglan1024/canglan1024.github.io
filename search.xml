@@ -1,6 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MarkdownAdvance</title>
+    <url>/2020/03/21/MarkdownAdvance/</url>
+    <content><![CDATA[<h1 id="Markdown-高级功能"><a href="#Markdown-高级功能" class="headerlink" title="Markdown 高级功能"></a>Markdown 高级功能</h1><h2 id="1-符号转义"><a href="#1-符号转义" class="headerlink" title="1.符号转义"></a>1.符号转义</h2><p>Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号<code>\</code>，同时通过该符号所设置的格式也不会被解析。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">\*\*转义\*\*</span><br></pre></td></tr></table></figure>
+<p><strong>加粗</strong><br>**转义**  </p>
+<a id="more"></a>
+
+<p>Markdown中需要使用转义显示的符号如下：  </p>
+<table>
+<thead>
+<tr>
+<th align="center">Fuhao</th>
+<th align="center">type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\</td>
+<td align="center">反斜线</td>
+</tr>
+<tr>
+<td align="center">`</td>
+<td align="center">反引号</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">星号</td>
+</tr>
+<tr>
+<td align="center">_</td>
+<td align="center">下划线</td>
+</tr>
+<tr>
+<td align="center">()</td>
+<td align="center">小括号</td>
+</tr>
+<tr>
+<td align="center">[]</td>
+<td align="center">方括号</td>
+</tr>
+<tr>
+<td align="center">{}</td>
+<td align="center">花括号</td>
+</tr>
+<tr>
+<td align="center">#</td>
+<td align="center">井号</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">加号</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减号</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">小数点</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td align="center">感叹号</td>
+</tr>
+</tbody></table>
+<h2 id="2-公式"><a href="#2-公式" class="headerlink" title="2.公式"></a>2.公式</h2><p>在Markdown中插入公式前，需要开启Mathjax公式渲染。</p>
+<p><strong>行内公式：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">函数：$f(x)&#x3D;ax+b$</span><br></pre></td></tr></table></figure>
+
+<p>函数：$f(x)=ax+b$</p>
+<p><strong>单行公式：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$E&#x3D;mc^2$$</span><br><span class="line">$$\sin(\alpha)^&#123;\theta&#125;&#x3D;\sum_&#123;i&#x3D;0&#125;^&#123;n&#125;(x^i + \cos(f))$$</span><br></pre></td></tr></table></figure>
+<p>$$E=mc^2$$<br>$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$</p>
+<p><strong>多行公式：</strong><br>使用LaTex格式公式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">f(x) &#x3D; \int_&#123;-\infty&#125;^\infty</span><br><span class="line">    \hat f(\xi)\,e^&#123;2 \pi i \xi x&#125;</span><br><span class="line">    \,d\xi</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>f(x) = \int_{-\infty}^\infty<br>    \hat f(\xi),e^{2 \pi i \xi x}<br>    ,d\xi<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\mathbf&#123;V&#125;_1 \times \mathbf&#123;V&#125;_2 &#x3D;  \begin&#123;vmatrix&#125; </span><br><span class="line">\mathbf&#123;i&#125; &amp; \mathbf&#123;j&#125; &amp; \mathbf&#123;k&#125; \\\\</span><br><span class="line">\frac&#123;\partial X&#125;&#123;\partial u&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial u&#125; &amp; 0 \\\\</span><br><span class="line">\frac&#123;\partial X&#125;&#123;\partial v&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial v&#125; &amp; 0 \\\\</span><br><span class="line">\end&#123;vmatrix&#125;</span><br><span class="line">$&#123;$tep1&#125;&#123;\style&#123;visibility:hidden&#125;&#123;(x+1)(x+1)&#125;&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">注：由于Hexo Markdown渲染问题，LaTex换行符\\需要改写成\\\\才能被正确识别</span><br></pre></td></tr></table></figure>
+<p>$$<br>\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}<br>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\<br>\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\<br>\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \\<br>\end{vmatrix}<br>${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}<br>$$</p>
+<h2 id="3-流程图"><a href="#3-流程图" class="headerlink" title="3.流程图"></a>3.流程图</h2><p>Hexo默认不支持Markdown流程图，需要添加支持：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-filter-flowchart</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，重启<code>hexo server</code>即可启用流程图支持</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96; \flow</span><br><span class="line">st&#x3D;&gt;start: 用户登陆</span><br><span class="line">op&#x3D;&gt;operation: 登陆操作</span><br><span class="line">cond&#x3D;&gt;condition: 登陆成功 Yes or No?</span><br><span class="line">e&#x3D;&gt;end: 进入后台</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br><span class="line">&#96;&#96;&#96;</span><br><span class="line">注：flow前的\是为了防止代码被解析，使用时须去掉</span><br></pre></td></tr></table></figure>
+
+
+<div id="flowchart-0" class="flow-chart"></div>
+
+<p>流程图使用<code>flow</code>语法，可分为两部分，分别定义模块和模块之间的连接。<br><strong>定义模块</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tag&#x3D;&gt;type: content:&gt;url</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>tag</code>为模块名，<code>type</code>为模块类型，共有6种：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Type</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">start</td>
+<td align="center">开始</td>
+</tr>
+<tr>
+<td align="center">end</td>
+<td align="center">结束</td>
+</tr>
+<tr>
+<td align="center">operation</td>
+<td align="center">操作</td>
+</tr>
+<tr>
+<td align="center">subroutine</td>
+<td align="center">子程序</td>
+</tr>
+<tr>
+<td align="center">condition</td>
+<td align="center">条件</td>
+</tr>
+<tr>
+<td align="center">inputoutput</td>
+<td align="center">输入或输出</td>
+</tr>
+</tbody></table>
+<p><code>content</code>指框图种显示的文本，注意<code>type:</code>与文本之间须有一个空格。<br><code>url</code>是与文本绑定的链接。  </p>
+<p><strong>定义连接</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tga1-&gt;tag2</span><br><span class="line">tag1-&gt;tag2-&gt;tag3</span><br><span class="line"></span><br><span class="line">注：连接可两两配对分开定义，也可连续定义</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>-&gt;</code>连接两个模块，对于<code>condition</code>类型，需要分别对两个分支指定连接。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">condition1(yes)-&gt;tag1</span><br><span class="line">condition1(no)-&gt;tag2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 用户登陆
+op=>operation: 登陆操作
+cond=>condition: 登陆成功 Yes or No?
+e=>end: 进入后台
+
+st->op->cond
+cond(yes)->e
+cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>]]></content>
+      <categories>
+        <category>Language</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GitPagesCNAME</title>
     <url>/2020/03/19/GitPageCNAME/</url>
     <content><![CDATA[<h1 id="使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效"><a href="#使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效" class="headerlink" title="使用CNAME文件解决Hexo发布后GitHub Pages自定义域名失效"></a>使用CNAME文件解决Hexo发布后GitHub Pages自定义域名失效</h1><p>使用Hexo将博客托管到GitHub Pages，每次使用 <code>hexo deploy</code> 发布后，使用原域名访问博客出现404  </p>
