@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    MarkdownAdvance |  浮云沧澜
+    TermuxStart |  浮云沧澜
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -35,7 +35,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-MarkdownAdvance" class="article article-type-post" itemscope
+  <article id="post-TermuxStart" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -43,7 +43,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  MarkdownAdvance
+  TermuxStart
 </h1>
   
 
@@ -52,12 +52,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/03/21/MarkdownAdvance/" class="article-date">
-  <time datetime="2020-03-21T07:48:54.000Z" itemprop="datePublished">2020-03-21</time>
+      <a href="/2020/04/04/TermuxStart/" class="article-date">
+  <time datetime="2020-04-04T08:40:21.000Z" itemprop="datePublished">2020-04-04</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Language/">Language</a>
+    <a class="article-category-link" href="/categories/AndroidApps/">AndroidApps</a>
   </div>
 
       
@@ -67,7 +67,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">780字</span>
+            <span class="post-count">1.1k字</span>
         </span>
     </span>
 
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3分钟</span>
+            <span class="post-count">4分钟</span>
         </span>
     </span>
 </div>
@@ -101,143 +101,65 @@
       
 
       
-      <h1 id="Markdown-高级功能"><a href="#Markdown-高级功能" class="headerlink" title="Markdown 高级功能"></a>Markdown 高级功能</h1><h2 id="1-符号转义"><a href="#1-符号转义" class="headerlink" title="1.符号转义"></a>1.符号转义</h2><p>Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号<code>\</code>，同时通过该符号所设置的格式也不会被解析。  </p>
-<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**加粗**</span><br><span class="line"><span class="symbol">\*</span><span class="symbol">\*</span>转义<span class="symbol">\*</span><span class="symbol">\*</span></span><br></pre></td></tr></table></figure>
-<p><strong>加粗</strong><br>**转义**  </p>
+      <h1 id="Termux-入门"><a href="#Termux-入门" class="headerlink" title="Termux 入门"></a>Termux 入门</h1><p><img src="/img/termux-1.png" alt="Termux"></p>
+<p>最近开始接触Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。<br>本篇作为入门，先粗略介绍一下软件和操作。  </p>
+<blockquote>
+<p>本篇内容参考博客文章<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程-国光</a>，首先进行感谢。</p>
+</blockquote>
+<h2 id="1-Termux简介"><a href="#1-Termux简介" class="headerlink" title="1.Termux简介"></a>1.Termux简介</h2><p><code>Termux</code>是一个<strong>Android</strong>平台上的终端模拟器，自带<strong>Linux</strong>运行环境，无需root权限即可使用。通过内置的<strong>APT</strong>包管理器，可以如Linux系统一样配置<strong>Python</strong>，<strong>MySQL</strong>，<strong>PHP</strong>，<strong>NGINX</strong>等，便于在手机、平板等移动设备上进行编程、调试等工作。</p>
 <a id="more"></a>
+<p>更多信息可前往<a href="https://termux.com/" target="_blank" rel="noopener">Termux 官网</a>、<a href="https://github.com/termux/termux-app" target="_blank" rel="noopener">Turmux GitHub项目</a>。</p>
+<p>安装包获取地址：</p>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.termux" target="_blank" rel="noopener">Google Play</a></li>
+<li><a href="https://f-droid.org/en/packages/com.termux/" target="_blank" rel="noopener">F-Droid</a></li>
+<li><a href="https://store.nethunter.com/en/packages/com.termux/" target="_blank" rel="noopener">Kali Nethunter Store</a></li>
+</ul>
+<h2 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2.基本操作"></a>2.基本操作</h2><p>初始时Termux主界面如下：<br><img src="/img/termux-2.jpg" alt="Termux主界面"><br>与普通终端模拟器类似，点击屏幕即可呼出键盘输入命令，不同的是，行首处没有显示当前路径，这可能是由于Termux运行环境是建立在Android系统上的缘故，路径和权限都会与原生Linux都会有所不同。</p>
+<p>长按光标显示弹出式菜单，包含复制、粘贴、更多，此时可移动光标选择需要复制的范围。<br>菜单选项如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--	Copy: 复制</span></span><br><span class="line"><span class="comment">--	Paste: 粘贴</span></span><br><span class="line"><span class="comment">--	More:</span></span><br><span class="line">		<span class="keyword">Select</span> <span class="keyword">URL</span>: 选择网址</span><br><span class="line">		<span class="keyword">Share</span> transcipt: 分享终端输出内容</span><br><span class="line">		Rest: 重置终端</span><br><span class="line">		<span class="keyword">Kill</span> process: 结束会话进程</span><br><span class="line">		<span class="keyword">Style</span>: 显示风格(需要安装Termux:<span class="keyword">Style</span>)</span><br><span class="line">		<span class="keyword">Keep</span> screen <span class="keyword">on</span>: 屏幕常亮</span><br><span class="line">		<span class="keyword">Help</span>: 帮助文档</span><br></pre></td></tr></table></figure>
 
-<p>Markdown中需要使用转义显示的符号如下：  </p>
-<table>
-<thead>
-<tr>
-<th align="center">Fuhao</th>
-<th align="center">type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">\</td>
-<td align="center">反斜线</td>
-</tr>
-<tr>
-<td align="center">`</td>
-<td align="center">反引号</td>
-</tr>
-<tr>
-<td align="center">*</td>
-<td align="center">星号</td>
-</tr>
-<tr>
-<td align="center">_</td>
-<td align="center">下划线</td>
-</tr>
-<tr>
-<td align="center">()</td>
-<td align="center">小括号</td>
-</tr>
-<tr>
-<td align="center">[]</td>
-<td align="center">方括号</td>
-</tr>
-<tr>
-<td align="center">{}</td>
-<td align="center">花括号</td>
-</tr>
-<tr>
-<td align="center">#</td>
-<td align="center">井号</td>
-</tr>
-<tr>
-<td align="center">+</td>
-<td align="center">加号</td>
-</tr>
-<tr>
-<td align="center">-</td>
-<td align="center">减号</td>
-</tr>
-<tr>
-<td align="center">.</td>
-<td align="center">小数点</td>
-</tr>
-<tr>
-<td align="center">!</td>
-<td align="center">感叹号</td>
-</tr>
-</tbody></table>
-<h2 id="2-公式"><a href="#2-公式" class="headerlink" title="2.公式"></a>2.公式</h2><p>在Markdown中插入公式前，需要开启Mathjax公式渲染。</p>
-<p><strong>行内公式：</strong></p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数：<span class="symbol">$</span>f(x)=ax+b<span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+<p>沿屏幕左侧右滑呼出侧边栏，可以管理会话和打开键盘。<br>长按<code>KEYBOARD</code>可以打开键盘上方的功能按键栏。</p>
+<h2 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h2><h3 id="组合功能键"><a href="#组合功能键" class="headerlink" title="组合功能键"></a>组合功能键</h3><p>键盘上的<code>CTRL</code>键常常与其他按键组合作为快捷键，点击功能按键栏上的<code>CTRL</code>后再按下键盘上的按键即可实现组合功能。<br>同时，Termux使用<code>音量-</code>作为<code>CTRL</code>的物理按键，按住<code>音量-</code>再按下键盘上的按键也可以实现组合功能。<br>对应的功能如下：</p>
+<ul>
+<li>CTRL+A -&gt; 移动光标至行首(HOME)</li>
+<li>CTRL+C -&gt; 中止当前进程</li>
+<li>CTRL+D -&gt; 注销当前会话</li>
+<li>CTRL+E -&gt; 移动光标至行尾(END)</li>
+<li>CTRL+K -&gt; 删除光标至行尾内容</li>
+<li>CTRL+L -&gt; 清除当前屏幕内容</li>
+<li>CTRL+Z -&gt; 挂起当前进程</li>
+</ul>
+<p>由于移动设备的键盘缺失了许多功能键，如方向键等，Termux提供了<code>音量+</code>组合键实现一些特殊的功能键。组合及对应功能如下(以VU指代’音量+’)：</p>
+<ul>
+<li>VU+E -&gt; ESC</li>
+<li>VU+T -&gt; TAB</li>
+<li>VU+(1~0) -&gt; F1~F10</li>
+<li>VU+B -&gt; ALT+B (光标前移一个单词)</li>
+<li>VU+F -&gt; ALT+F (光标后移一个单词)</li>
+<li>VU+X -&gt; ALT+X</li>
+<li>VU+W -&gt; 方向上键</li>
+<li>VU+A -&gt; 方向左键</li>
+<li>VU+S -&gt; 方向下键</li>
+<li>VU+D -&gt; 方向右键</li>
+<li>VU+L -&gt; | (管道符号)</li>
+<li>VU+H -&gt; ~ (波浪符号)</li>
+<li>VU+U -&gt; _ (下划线)</li>
+<li>VU+P -&gt; 上一页</li>
+<li>VU+N -&gt; 下一页</li>
+<li>VU+. -&gt; CTRL+\</li>
+<li>VU+V -&gt; 显示音量控制菜单</li>
+<li>VU+Q -&gt; 显示功能按键栏</li>
+</ul>
+<h2 id="4-包管理器"><a href="#4-包管理器" class="headerlink" title="4.包管理器"></a>4.包管理器</h2><p>Termux支持<strong>APT</strong>包管理器，可直接使用apt命令进行安装、卸载、更新等操作，由于Termux是独立的环境，安装包不需要root权限，也不会影响系统软件。<br>Termux还支持使用pkg命令进行包管理，pkg命令可以兼容apt命令，可以作为apt命令的替代，详细说明可以通过<code>pkg hlep</code>查看。常用的pkg命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pkg search &lt;query&gt;			搜索包</span><br><span class="line">pkg install &lt;package&gt;			安装包</span><br><span class="line">pkg uninstall &lt;package&gt;			卸载包</span><br><span class="line">pkg reinstall &lt;package&gt;			重新安装包</span><br><span class="line">pkg update				更新源</span><br><span class="line">pkg upgrade				升级软件包</span><br><span class="line">pkg list-all				列出所有可用包</span><br><span class="line">pkg list-installed			列出已安装包</span><br><span class="line">pkg shoe &lt;package&gt;			显示包详细信息</span><br><span class="line">pkg files &lt;package&gt;			显示包相关文件</span><br></pre></td></tr></table></figure>
 
-<p>函数：$f(x)=ax+b$</p>
-<p><strong>单行公式：</strong></p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span>E=mc^<span class="number">2</span><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span>\<span class="built-in">sin</span>(\alpha)^&#123;\theta&#125;=\sum_&#123;i=<span class="number">0</span>&#125;^&#123;n&#125;(x^i + \<span class="built-in">cos</span>(f))<span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
-<p>$$E=mc^2$$<br>$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$</p>
-<p><strong>多行公式：</strong><br>使用LaTex格式公式</p>
-<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">f(x) = <span class="symbol">\i</span>nt_&#123;-<span class="symbol">\i</span>nfty&#125;^<span class="symbol">\i</span>nfty</span><br><span class="line">    <span class="symbol">\h</span>at f(<span class="symbol">\x</span>i)<span class="symbol">\,</span>e^&#123;2 <span class="symbol">\p</span>i i <span class="symbol">\x</span>i x&#125;</span><br><span class="line">    <span class="symbol">\,</span>d<span class="symbol">\x</span>i</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>f(x) = \int_{-\infty}^\infty<br>    \hat f(\xi),e^{2 \pi i \xi x}<br>    ,d\xi<br>$$</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">mathbf</span><span class="string">&#123;V&#125;</span></span>_1 <span class="tag">\<span class="name">times</span></span> <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;V&#125;</span></span>_2 =  <span class="tag">\<span class="name">begin</span><span class="string">&#123;vmatrix&#125;</span></span> </span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">mathbf</span><span class="string">&#123;i&#125;</span></span> &amp; <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;j&#125;</span></span> &amp; <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;k&#125;</span></span> <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial X&#125;</span><span class="string">&#123;\partial u&#125;</span></span> &amp;  <span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial Y&#125;</span><span class="string">&#123;\partial u&#125;</span></span> &amp; 0 <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial X&#125;</span><span class="string">&#123;\partial v&#125;</span></span> &amp;  <span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial Y&#125;</span><span class="string">&#123;\partial v&#125;</span></span> &amp; 0 <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;vmatrix&#125;</span></span></span></span><br><span class="line"><span class="formula">$&#123;$tep1&#125;&#123;<span class="tag">\<span class="name">style</span><span class="string">&#123;visibility:hidden&#125;</span><span class="string">&#123;(x+1)(x+1)&#125;</span></span>&#125;</span></span><br><span class="line"><span class="formula">$$</span></span><br><span class="line"></span><br><span class="line">注：由于Hexo Markdown渲染问题，LaTex换行符<span class="tag">\<span class="name">\</span></span>需要改写成<span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span>才能被正确识别</span><br></pre></td></tr></table></figure>
-<p>$$<br>\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}<br>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\<br>\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\<br>\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \\<br>\end{vmatrix}<br>${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}<br>$$</p>
-<h2 id="3-流程图"><a href="#3-流程图" class="headerlink" title="3.流程图"></a>3.流程图</h2><p>Hexo默认不支持Markdown流程图，需要添加支持：</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --<span class="built_in">save</span> hexo-<span class="built_in">filter</span>-flowchart</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，重启<code>hexo server</code>即可启用流程图支持</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">``` \flow</span><br><span class="line"><span class="attribute">st</span>=&gt;start: 用户登陆</span><br><span class="line"><span class="attribute">op</span>=&gt;operation: 登陆操作</span><br><span class="line"><span class="attribute">cond</span>=&gt;condition: 登陆成功 <span class="literal">Yes</span> <span class="keyword">or</span> <span class="literal">No</span>?</span><br><span class="line"><span class="attribute">e</span>=&gt;end: 进入后台</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(<span class="literal">yes</span>)-&gt;e</span><br><span class="line">cond(<span class="literal">no</span>)-&gt;op</span><br><span class="line">```</span><br><span class="line">注：flow前的\是为了防止代码被解析，使用时须去掉</span><br></pre></td></tr></table></figure>
-
-
-<div id="flowchart-0" class="flow-chart"></div>
-
-<p>流程图使用<code>flow</code>语法，可分为两部分，分别定义模块和模块之间的连接。<br><strong>定义模块</strong></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">tag</span>=&gt;<span class="built_in">type</span>: conten<span class="variable">t:</span>&gt;url</span><br></pre></td></tr></table></figure>
-
-<p>其中<code>tag</code>为模块名，<code>type</code>为模块类型，共有6种：</p>
-<table>
-<thead>
-<tr>
-<th align="center">Type</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">start</td>
-<td align="center">开始</td>
-</tr>
-<tr>
-<td align="center">end</td>
-<td align="center">结束</td>
-</tr>
-<tr>
-<td align="center">operation</td>
-<td align="center">操作</td>
-</tr>
-<tr>
-<td align="center">subroutine</td>
-<td align="center">子程序</td>
-</tr>
-<tr>
-<td align="center">condition</td>
-<td align="center">条件</td>
-</tr>
-<tr>
-<td align="center">inputoutput</td>
-<td align="center">输入或输出</td>
-</tr>
-</tbody></table>
-<p><code>content</code>指框图种显示的文本，注意<code>type:</code>与文本之间须有一个空格。<br><code>url</code>是与文本绑定的链接。  </p>
-<p><strong>定义连接</strong></p>
-<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">tga1</span>-&gt;</span>tag2</span><br><span class="line"><span class="function"><span class="title">tag1</span>-&gt;</span><span class="function"><span class="title">tag2</span>-&gt;</span>tag3</span><br><span class="line"></span><br><span class="line">注：连接可两两配对分开定义，也可连续定义</span><br></pre></td></tr></table></figure>
-
-<p>使用<code>-&gt;</code>连接两个模块，对于<code>condition</code>类型，需要分别对两个分支指定连接。</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">condition1<span class="function"><span class="params">(<span class="literal">yes</span>)</span>-&gt;</span>tag1</span><br><span class="line">condition1<span class="function"><span class="params">(<span class="literal">no</span>)</span>-&gt;</span>tag2</span><br></pre></td></tr></table></figure>
-
+<h2 id="5-环境变量"><a href="#5-环境变量" class="headerlink" title="5.环境变量"></a>5.环境变量</h2><p>由于Termux是运行在Android系统上的Linux环境，其环境变量独立与系统，同时提供了几个预设变量便于执行命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line">/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$HOME</span></span><br><span class="line">/data/data/com.termux/files/home</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PREFIX</span></span><br><span class="line">/data/data/com.termux/files/usr</span><br></pre></td></tr></table></figure>
 <hr>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 用户登陆
-op=>operation: 登陆操作
-cond=>condition: 登陆成功 Yes or No?
-e=>end: 进入后台
+<p><strong>系统环境: Andriod 6.0.1</strong><br><strong>软件环境: Termux 0.83 (Google Play)</strong></p>
+<hr>
 
-st->op->cond
-cond(yes)->e
-cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>
       
       <!-- reward -->
       
@@ -302,14 +224,14 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://canglan.tech/2020/03/21/MarkdownAdvance/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://canglan.tech/2020/04/04/TermuxStart/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apps/" rel="tag">Apps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/" rel="tag">Termux</a></li></ul>
 
 
     </footer>
@@ -320,19 +242,10 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
   
   <nav class="article-nav">
     
-      <a href="/2020/04/04/TermuxStart/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            TermuxStart
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/03/19/GitPageCNAME/" class="article-nav-link">
+      <a href="/2020/03/21/MarkdownAdvance/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">GitPagesCNAME</div>
+        <div class="article-nav-title">MarkdownAdvance</div>
       </a>
     
   </nav>

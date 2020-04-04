@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>TermuxStart</title>
+    <url>/2020/04/04/TermuxStart/</url>
+    <content><![CDATA[<h1 id="Termux-入门"><a href="#Termux-入门" class="headerlink" title="Termux 入门"></a>Termux 入门</h1><p><img src="/img/termux-1.png" alt="Termux"></p>
+<p>最近开始接触Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。<br>本篇作为入门，先粗略介绍一下软件和操作。  </p>
+<blockquote>
+<p>本篇内容参考博客文章<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程-国光</a>，首先进行感谢。</p>
+</blockquote>
+<h2 id="1-Termux简介"><a href="#1-Termux简介" class="headerlink" title="1.Termux简介"></a>1.Termux简介</h2><p><code>Termux</code>是一个<strong>Android</strong>平台上的终端模拟器，自带<strong>Linux</strong>运行环境，无需root权限即可使用。通过内置的<strong>APT</strong>包管理器，可以如Linux系统一样配置<strong>Python</strong>，<strong>MySQL</strong>，<strong>PHP</strong>，<strong>NGINX</strong>等，便于在手机、平板等移动设备上进行编程、调试等工作。</p>
+<a id="more"></a>
+<p>更多信息可前往<a href="https://termux.com/" target="_blank" rel="noopener">Termux 官网</a>、<a href="https://github.com/termux/termux-app" target="_blank" rel="noopener">Turmux GitHub项目</a>。</p>
+<p>安装包获取地址：</p>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.termux" target="_blank" rel="noopener">Google Play</a></li>
+<li><a href="https://f-droid.org/en/packages/com.termux/" target="_blank" rel="noopener">F-Droid</a></li>
+<li><a href="https://store.nethunter.com/en/packages/com.termux/" target="_blank" rel="noopener">Kali Nethunter Store</a></li>
+</ul>
+<h2 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2.基本操作"></a>2.基本操作</h2><p>初始时Termux主界面如下：<br><img src="/img/termux-2.jpg" alt="Termux主界面"><br>与普通终端模拟器类似，点击屏幕即可呼出键盘输入命令，不同的是，行首处没有显示当前路径，这可能是由于Termux运行环境是建立在Android系统上的缘故，路径和权限都会与原生Linux都会有所不同。</p>
+<p>长按光标显示弹出式菜单，包含复制、粘贴、更多，此时可移动光标选择需要复制的范围。<br>菜单选项如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--	Copy: 复制</span></span><br><span class="line"><span class="comment">--	Paste: 粘贴</span></span><br><span class="line"><span class="comment">--	More:</span></span><br><span class="line">		<span class="keyword">Select</span> <span class="keyword">URL</span>: 选择网址</span><br><span class="line">		<span class="keyword">Share</span> transcipt: 分享终端输出内容</span><br><span class="line">		Rest: 重置终端</span><br><span class="line">		<span class="keyword">Kill</span> process: 结束会话进程</span><br><span class="line">		<span class="keyword">Style</span>: 显示风格(需要安装Termux:<span class="keyword">Style</span>)</span><br><span class="line">		<span class="keyword">Keep</span> screen <span class="keyword">on</span>: 屏幕常亮</span><br><span class="line">		<span class="keyword">Help</span>: 帮助文档</span><br></pre></td></tr></table></figure>
+
+<p>沿屏幕左侧右滑呼出侧边栏，可以管理会话和打开键盘。<br>长按<code>KEYBOARD</code>可以打开键盘上方的功能按键栏。</p>
+<h2 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h2><h3 id="组合功能键"><a href="#组合功能键" class="headerlink" title="组合功能键"></a>组合功能键</h3><p>键盘上的<code>CTRL</code>键常常与其他按键组合作为快捷键，点击功能按键栏上的<code>CTRL</code>后再按下键盘上的按键即可实现组合功能。<br>同时，Termux使用<code>音量-</code>作为<code>CTRL</code>的物理按键，按住<code>音量-</code>再按下键盘上的按键也可以实现组合功能。<br>对应的功能如下：</p>
+<ul>
+<li>CTRL+A -&gt; 移动光标至行首(HOME)</li>
+<li>CTRL+C -&gt; 中止当前进程</li>
+<li>CTRL+D -&gt; 注销当前会话</li>
+<li>CTRL+E -&gt; 移动光标至行尾(END)</li>
+<li>CTRL+K -&gt; 删除光标至行尾内容</li>
+<li>CTRL+L -&gt; 清除当前屏幕内容</li>
+<li>CTRL+Z -&gt; 挂起当前进程</li>
+</ul>
+<p>由于移动设备的键盘缺失了许多功能键，如方向键等，Termux提供了<code>音量+</code>组合键实现一些特殊的功能键。组合及对应功能如下(以VU指代’音量+’)：</p>
+<ul>
+<li>VU+E -&gt; ESC</li>
+<li>VU+T -&gt; TAB</li>
+<li>VU+(1~0) -&gt; F1~F10</li>
+<li>VU+B -&gt; ALT+B (光标前移一个单词)</li>
+<li>VU+F -&gt; ALT+F (光标后移一个单词)</li>
+<li>VU+X -&gt; ALT+X</li>
+<li>VU+W -&gt; 方向上键</li>
+<li>VU+A -&gt; 方向左键</li>
+<li>VU+S -&gt; 方向下键</li>
+<li>VU+D -&gt; 方向右键</li>
+<li>VU+L -&gt; | (管道符号)</li>
+<li>VU+H -&gt; ~ (波浪符号)</li>
+<li>VU+U -&gt; _ (下划线)</li>
+<li>VU+P -&gt; 上一页</li>
+<li>VU+N -&gt; 下一页</li>
+<li>VU+. -&gt; CTRL+\</li>
+<li>VU+V -&gt; 显示音量控制菜单</li>
+<li>VU+Q -&gt; 显示功能按键栏</li>
+</ul>
+<h2 id="4-包管理器"><a href="#4-包管理器" class="headerlink" title="4.包管理器"></a>4.包管理器</h2><p>Termux支持<strong>APT</strong>包管理器，可直接使用apt命令进行安装、卸载、更新等操作，由于Termux是独立的环境，安装包不需要root权限，也不会影响系统软件。<br>Termux还支持使用pkg命令进行包管理，pkg命令可以兼容apt命令，可以作为apt命令的替代，详细说明可以通过<code>pkg hlep</code>查看。常用的pkg命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pkg search &lt;query&gt;			搜索包</span><br><span class="line">pkg install &lt;package&gt;			安装包</span><br><span class="line">pkg uninstall &lt;package&gt;			卸载包</span><br><span class="line">pkg reinstall &lt;package&gt;			重新安装包</span><br><span class="line">pkg update				更新源</span><br><span class="line">pkg upgrade				升级软件包</span><br><span class="line">pkg list-all				列出所有可用包</span><br><span class="line">pkg list-installed			列出已安装包</span><br><span class="line">pkg shoe &lt;package&gt;			显示包详细信息</span><br><span class="line">pkg files &lt;package&gt;			显示包相关文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-环境变量"><a href="#5-环境变量" class="headerlink" title="5.环境变量"></a>5.环境变量</h2><p>由于Termux是运行在Android系统上的Linux环境，其环境变量独立与系统，同时提供了几个预设变量便于执行命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line">/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$HOME</span></span><br><span class="line">/data/data/com.termux/files/home</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PREFIX</span></span><br><span class="line">/data/data/com.termux/files/usr</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>系统环境: Andriod 6.0.1</strong><br><strong>软件环境: Termux 0.83 (Google Play)</strong></p>
+<hr>
+]]></content>
+      <categories>
+        <category>AndroidApps</category>
+      </categories>
+      <tags>
+        <tag>Termux</tag>
+        <tag>Android</tag>
+        <tag>Apps</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MarkdownAdvance</title>
     <url>/2020/03/21/MarkdownAdvance/</url>
     <content><![CDATA[<h1 id="Markdown-高级功能"><a href="#Markdown-高级功能" class="headerlink" title="Markdown 高级功能"></a>Markdown 高级功能</h1><h2 id="1-符号转义"><a href="#1-符号转义" class="headerlink" title="1.符号转义"></a>1.符号转义</h2><p>Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号<code>\</code>，同时通过该符号所设置的格式也不会被解析。  </p>
