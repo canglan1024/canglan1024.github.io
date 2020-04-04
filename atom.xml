@@ -28,7 +28,7 @@
       &lt;h1 id=&quot;Termux-入门&quot;&gt;&lt;a href=&quot;#Termux-入门&quot; class=&quot;headerlink&quot; title=&quot;Termux 入门&quot;&gt;&lt;/a&gt;Termux 入门&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/termux-1.png&quot; alt=&quot;Termux&quot;&gt;&lt;/p&gt;
 &lt;p&gt;最近开始接触Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。&lt;br&gt;本篇作为入门，先粗略介绍一下软件和操作。  &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;本篇内容参考博客文章&lt;a href=&quot;https://www.sqlsec.com/2018/05/termux.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Termux 高级终端安装使用配置教程-国光&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
+&lt;p&gt;本篇内容参考了博客文章&lt;a href=&quot;https://www.sqlsec.com/2018/05/termux.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Termux 高级终端安装使用配置教程-国光&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;1-Termux简介&quot;&gt;&lt;a href=&quot;#1-Termux简介&quot; class=&quot;headerlink&quot; title=&quot;1.Termux简介&quot;&gt;&lt;/a&gt;1.Termux简介&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Termux&lt;/code&gt;是一个&lt;strong&gt;Android&lt;/strong&gt;平台上的终端模拟器，自带&lt;strong&gt;Linux&lt;/strong&gt;运行环境，无需root权限即可使用。通过内置的&lt;strong&gt;APT&lt;/strong&gt;包管理器，可以如Linux系统一样配置&lt;strong&gt;Python&lt;/strong&gt;，&lt;strong&gt;MySQL&lt;/strong&gt;，&lt;strong&gt;PHP&lt;/strong&gt;，&lt;strong&gt;NGINX&lt;/strong&gt;等，便于在手机、平板等移动设备上进行编程、调试等工作。&lt;/p&gt;
     
@@ -55,7 +55,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Markdown-高级功能&quot;&gt;&lt;a href=&quot;#Markdown-高级功能&quot; class=&quot;headerlink&quot; title=&quot;Markdown 高级功能&quot;&gt;&lt;/a&gt;Markdown 高级功能&lt;/h1&gt;&lt;h2 id=&quot;1-符号转义&quot;&gt;&lt;a href=&quot;#1-符号转义&quot; class=&quot;headerlink&quot; title=&quot;1.符号转义&quot;&gt;&lt;/a&gt;1.符号转义&lt;/h2&gt;&lt;p&gt;Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号&lt;code&gt;\&lt;/code&gt;，同时通过该符号所设置的格式也不会被解析。  &lt;/p&gt;
+      &lt;h1 id=&quot;Markdown-高级功能&quot;&gt;&lt;a href=&quot;#Markdown-高级功能&quot; class=&quot;headerlink&quot; title=&quot;Markdown 高级功能&quot;&gt;&lt;/a&gt;Markdown 高级功能&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;本篇内容参考了&lt;a href=&quot;https://www.runoob.com/markdown/md-advance.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown 高级技巧-菜鸟教程&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-符号转义&quot;&gt;&lt;a href=&quot;#1-符号转义&quot; class=&quot;headerlink&quot; title=&quot;1.符号转义&quot;&gt;&lt;/a&gt;1.符号转义&lt;/h2&gt;&lt;p&gt;Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号&lt;code&gt;\&lt;/code&gt;，同时通过该符号所设置的格式也不会被解析。  &lt;/p&gt;
 &lt;figure class=&quot;highlight taggerscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;**加粗**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;\*&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;\*&lt;/span&gt;转义&lt;span class=&quot;symbol&quot;&gt;\*&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;\*&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;strong&gt;加粗&lt;/strong&gt;&lt;br&gt;**转义**  &lt;/p&gt;
     
@@ -108,6 +111,9 @@
     <summary type="html">
     
       &lt;h1 id=&quot;Markdown-HTML-标签&quot;&gt;&lt;a href=&quot;#Markdown-HTML-标签&quot; class=&quot;headerlink&quot; title=&quot;Markdown HTML 标签&quot;&gt;&lt;/a&gt;Markdown HTML 标签&lt;/h1&gt;&lt;p&gt;Markdown可以解析HMTL标签，因此可以使用HTML标签实现Markdown基本语法，同时实现一些Markdown不支持的功能&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本篇内容参考了博客文章&lt;a href=&quot;https://wuchenxu.com/2015/12/30/Markdown-html-compare/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown语法对应的HTML标签实现-Wu Chenxu&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h2&gt;&lt;p&gt;使用HTML标签实现多级标题&lt;/p&gt;
 &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt; 标题 &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt; 标题 &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h3&lt;/span&gt;&amp;gt;&lt;/span&gt; 标题 &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h3&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -136,7 +142,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Markdown基础语法与测试&quot;&gt;&lt;a href=&quot;#Markdown基础语法与测试&quot; class=&quot;headerlink&quot; title=&quot;Markdown基础语法与测试&quot;&gt;&lt;/a&gt;Markdown基础语法与测试&lt;/h1&gt;&lt;h2 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h2&gt;&lt;p&gt;文字前加#设置标题&lt;/p&gt;
+      &lt;h1 id=&quot;Markdown基础语法与测试&quot;&gt;&lt;a href=&quot;#Markdown基础语法与测试&quot; class=&quot;headerlink&quot; title=&quot;Markdown基础语法与测试&quot;&gt;&lt;/a&gt;Markdown基础语法与测试&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;本篇内容参考了博客文章&lt;a href=&quot;https://www.jianshu.com/p/191d1e21f7ed&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown基本语法-高鸿祥&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h2&gt;&lt;p&gt;文字前加#设置标题&lt;/p&gt;
 &lt;figure class=&quot;highlight clean&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 一级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## 二级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;### 三级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#### 四级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;##### ……&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;显示效果如下：&lt;/p&gt;
 &lt;blockquote&gt;
