@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://canglan.tech/"/>
-  <updated>2020-04-04T08:40:21.000Z</updated>
+  <updated>2020-04-05T08:00:04.000Z</updated>
   <id>https://canglan.tech/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Termuxlxml</title>
+    <link href="https://canglan.tech/2020/04/05/Termuxlxml/"/>
+    <id>https://canglan.tech/2020/04/05/Termuxlxml/</id>
+    <published>2020-04-05T08:00:04.000Z</published>
+    <updated>2020-04-05T08:00:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Termux-安装-Python-lxml-库&quot;&gt;&lt;a href=&quot;#Termux-安装-Python-lxml-库&quot; class=&quot;headerlink&quot; title=&quot;Termux 安装 Python lxml 库&quot;&gt;&lt;/a&gt;Termux 安装 Python lxml 库&lt;/h1&gt;&lt;p&gt;在&lt;code&gt;Termux&lt;/code&gt;中安装&lt;code&gt;Python&lt;/code&gt;后，为了尝试在手机上测试爬虫，尝试安装&lt;code&gt;PyQuery&lt;/code&gt;库，在安装依赖&lt;code&gt;lxml&lt;/code&gt;库时报错。&lt;/p&gt;
+&lt;p&gt;部分错误信息如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Complete output (&lt;span class=&quot;number&quot;&gt;113&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;lines&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Building lxml &lt;span class=&quot;built_in&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4.5&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Building &lt;span class=&quot;keyword&quot;&gt;without&lt;/span&gt; Cython.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ERROR: b&lt;span class=&quot;string&quot;&gt;&#39;/data/data/com.termux/files/usr/bin/sh: 1: xslt-config: not found\n&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ** make sure &lt;span class=&quot;keyword&quot;&gt;the&lt;/span&gt; development packages &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; libxml2 &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; libxslt are installed **&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;从报错内容可知依赖库&lt;code&gt;libxml2&lt;/code&gt;和&lt;code&gt;libxslt&lt;/code&gt;未安装，通过&lt;code&gt;pkg&lt;/code&gt;安装依赖：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pkg install libxml2 libxslt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://canglan.tech/categories/Python/"/>
+    
+    
+      <category term="Debug" scheme="https://canglan.tech/tags/Debug/"/>
+    
+      <category term="Termux" scheme="https://canglan.tech/tags/Termux/"/>
+    
+      <category term="Python" scheme="https://canglan.tech/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>TermuxStart</title>
@@ -85,7 +114,7 @@
       
         
         
-          &lt;h1 id=&quot;使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效&quot;&gt;&lt;a href=&quot;#使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;使用-CNAME-文件解决-Hexo-发布后-GitHub-Pages-自定义域名失效&quot;&gt;&lt;a href=&quot;#使用-CNAME-文件解决-Hexo-发布后-GitHub-Pages-自定义域名失效&quot; class=&quot;headerlink&quot; title=&quot;使用
         
       
     
@@ -98,6 +127,8 @@
       <category term="Hexo" scheme="https://canglan.tech/tags/Hexo/"/>
     
       <category term="GitHubPages" scheme="https://canglan.tech/tags/GitHubPages/"/>
+    
+      <category term="Debug" scheme="https://canglan.tech/tags/Debug/"/>
     
   </entry>
   

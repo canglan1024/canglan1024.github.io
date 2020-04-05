@@ -69,6 +69,83 @@
     
     
     
+    <article id="post-Termuxlxml" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/05/Termuxlxml/"
+    >Termuxlxml</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/05/Termuxlxml/" class="article-date">
+  <time datetime="2020-04-05T08:00:04.000Z" itemprop="datePublished">2020-04-05</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h1 id="Termux-安装-Python-lxml-库"><a href="#Termux-安装-Python-lxml-库" class="headerlink" title="Termux 安装 Python lxml 库"></a>Termux 安装 Python lxml 库</h1><p>在<code>Termux</code>中安装<code>Python</code>后，为了尝试在手机上测试爬虫，尝试安装<code>PyQuery</code>库，在安装依赖<code>lxml</code>库时报错。</p>
+<p>部分错误信息如下：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Complete output (<span class="number">113</span> <span class="keyword">lines</span>):</span><br><span class="line">    Building lxml <span class="built_in">version</span> <span class="number">4.5</span><span class="number">.0</span>.</span><br><span class="line">    Building <span class="keyword">without</span> Cython.</span><br><span class="line">    ERROR: b<span class="string">'/data/data/com.termux/files/usr/bin/sh: 1: xslt-config: not found\n'</span></span><br><span class="line">    ** make sure <span class="keyword">the</span> development packages <span class="keyword">of</span> libxml2 <span class="keyword">and</span> libxslt are installed **</span><br></pre></td></tr></table></figure>
+<p>从报错内容可知依赖库<code>libxml2</code>和<code>libxslt</code>未安装，通过<code>pkg</code>安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install libxml2 libxslt</span><br></pre></td></tr></table></figure>
+      
+      <a class="article-more-link" href="/2020/04/05/Termuxlxml/">阅读更多...</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debug/" rel="tag">Debug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/" rel="tag">Termux</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-TermuxStart" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -266,7 +343,7 @@
       
 
       
-      <h1 id="使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效"><a href="#使用CNAME文件解决Hexo发布后GitHub-Pages自定义域名失效" class="headerlink" title="使用CNAME文件解决Hexo发布后GitHub Pages自定义域名失效"></a>使用CNAME文件解决Hexo发布后GitHub Pages自定义域名失效</h1><blockquote>
+      <h1 id="使用-CNAME-文件解决-Hexo-发布后-GitHub-Pages-自定义域名失效"><a href="#使用-CNAME-文件解决-Hexo-发布后-GitHub-Pages-自定义域名失效" class="headerlink" title="使用 CNAME 文件解决 Hexo 发布后 GitHub Pages 自定义域名失效"></a>使用 CNAME 文件解决 Hexo 发布后 GitHub Pages 自定义域名失效</h1><blockquote>
 <p>本篇内容参考了博客文章<a href="https://www.xuxusheng.com/post/hexo发布之后gitpage自定义域名失效" target="_blank" rel="noopener">hexo发布之后gitpage自定义域名失效-许盛</a>，首先进行感谢。</p>
 </blockquote>
 <p>使用Hexo将博客托管到GitHub Pages，每次使用 <code>hexo deploy</code> 发布后，使用原域名访问博客出现404  </p>
@@ -288,7 +365,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHubPages/" rel="tag">GitHubPages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debug/" rel="tag">Debug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHubPages/" rel="tag">GitHubPages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
 
 
     </footer>
