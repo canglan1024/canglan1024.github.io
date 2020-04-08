@@ -25,13 +25,11 @@
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;通过-Unity-Hub-安装-Unity-时卡住的解决方法&quot;&gt;&lt;a href=&quot;#通过-Unity-Hub-安装-Unity-时卡住的解决方法&quot; class=&quot;headerlink&quot; title=&quot;通过 Unity Hub 安装 Unity
-        
-      
+      &lt;h1 id=&quot;通过-Unity-Hub-安装-Unity-时卡住的解决方法&quot;&gt;&lt;a href=&quot;#通过-Unity-Hub-安装-Unity-时卡住的解决方法&quot; class=&quot;headerlink&quot; title=&quot;通过 Unity Hub 安装 Unity 时卡住的解决方法&quot;&gt;&lt;/a&gt;通过 Unity Hub 安装 Unity 时卡住的解决方法&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/unity.png&quot; alt=&quot;unity&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本篇内容参考了博客文章&lt;a href=&quot;https://blog.csdn.net/u014554395/article/details/102996497&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;UnityHub下载卡住怎么办？-马派森&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;新版&lt;code&gt;Unity&lt;/code&gt;不再提供独立的安装包，而是通过&lt;code&gt;Unity Hub&lt;/code&gt;进行安装和模块管理，但是由于网络原因，可能会出现下载失败而导致的安装过程卡住的情况，在此记录一次安装过程并提供一种本地安装解决方案。&lt;/p&gt;
     
     </summary>
     
@@ -68,9 +66,9 @@
       <category term="Python" scheme="https://canglan.tech/categories/Python/"/>
     
     
-      <category term="Termux" scheme="https://canglan.tech/tags/Termux/"/>
-    
       <category term="Debug" scheme="https://canglan.tech/tags/Debug/"/>
+    
+      <category term="Termux" scheme="https://canglan.tech/tags/Termux/"/>
     
       <category term="Python" scheme="https://canglan.tech/tags/Python/"/>
     
