@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Termuxlxml |  浮云沧澜
+    UnityInstall |  浮云沧澜
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -35,7 +35,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-Termuxlxml" class="article article-type-post" itemscope
+  <article id="post-UnityInstall" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -43,7 +43,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Termuxlxml
+  UnityInstall
 </h1>
   
 
@@ -52,12 +52,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/04/05/Termuxlxml/" class="article-date">
-  <time datetime="2020-04-05T08:00:04.000Z" itemprop="datePublished">2020-04-05</time>
+      <a href="/2020/04/08/UnityInstall/" class="article-date">
+  <time datetime="2020-04-08T03:06:20.000Z" itemprop="datePublished">2020-04-08</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
+    <a class="article-category-link" href="/categories/Unity3D/">Unity3D</a>
   </div>
 
       
@@ -67,7 +67,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">534字</span>
+            <span class="post-count">1k字</span>
         </span>
     </span>
 
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2分钟</span>
+            <span class="post-count">5分钟</span>
         </span>
     </span>
 </div>
@@ -101,25 +101,32 @@
       
 
       
-      <h1 id="Termux-安装-Python-lxml-库"><a href="#Termux-安装-Python-lxml-库" class="headerlink" title="Termux 安装 Python lxml 库"></a>Termux 安装 Python lxml 库</h1><p>在<code>Termux</code>中安装<code>Python</code>后，为了尝试在手机上测试爬虫，尝试安装<code>PyQuery</code>库，在安装依赖<code>lxml</code>库时报错。</p>
-<p>部分错误信息如下：</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Complete output (<span class="number">113</span> <span class="keyword">lines</span>):</span><br><span class="line">    Building lxml <span class="built_in">version</span> <span class="number">4.5</span><span class="number">.0</span>.</span><br><span class="line">    Building <span class="keyword">without</span> Cython.</span><br><span class="line">    ERROR: b<span class="string">'/data/data/com.termux/files/usr/bin/sh: 1: xslt-config: not found\n'</span></span><br><span class="line">    ** make sure <span class="keyword">the</span> development packages <span class="keyword">of</span> libxml2 <span class="keyword">and</span> libxslt are installed **</span><br></pre></td></tr></table></figure>
-<p>从报错内容可知依赖库<code>libxml2</code>和<code>libxslt</code>未安装，通过<code>pkg</code>安装依赖：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install libxml2 libxslt</span><br></pre></td></tr></table></figure>
+      <h1 id="通过-Unity-Hub-安装-Unity-时卡住的解决方法"><a href="#通过-Unity-Hub-安装-Unity-时卡住的解决方法" class="headerlink" title="通过 Unity Hub 安装 Unity 时卡住的解决方法"></a>通过 Unity Hub 安装 Unity 时卡住的解决方法</h1><p><img src="/img/unity.png" alt="unity"></p>
+<blockquote>
+<p>本篇内容参考了博客文章<a href="https://blog.csdn.net/u014554395/article/details/102996497" target="_blank" rel="noopener">UnityHub下载卡住怎么办？-马派森</a>，首先进行感谢。</p>
+</blockquote>
+<p>新版<code>Unity</code>不再提供独立的安装包，而是通过<code>Unity Hub</code>进行安装和模块管理，但是由于网络原因，可能会出现下载失败而导致的安装过程卡住的情况，在此记录一次安装过程并提供一种本地安装解决方案。</p>
+<h2 id="安装选项"><a href="#安装选项" class="headerlink" title="安装选项"></a>安装选项</h2><p>在Unity Hub中选择安装”Unity 2019.3.4f1”，并选择以下模块：</p>
+<ul>
+<li>Microsoft Visual Studio Community 2019</li>
+<li>Windows Build Support(IL2CPP)</li>
+<li>Documentation</li>
+<li>Language-简体中文</li>
+</ul>
+<p>在弹出的安装窗口下方，下载进度卡在”66%”。</p>
+<h2 id="排错"><a href="#排错" class="headerlink" title="排错"></a>排错</h2><p>此时检查Unity Hub日志，Win10下的日志文件路径为<code>C:\Users\canglan\AppData\Roaming\UnityHub\logs\info-log.json</code>，相关记录如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"EditorDownloader"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Editor Downloader 2019.3.4f1: starting' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:21.241Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadsCluster"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Cluster total download size: 375.83MB' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.770Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadsCluster"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Cluster cluster-2019.3.4f1: downloads starting' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.771Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://download.unitychina.cn/download_unity/3274385dcda2/TargetSupportInstaller/UnitySetup-Windows-IL2CPP-Support-for-Editor-2019.3.4f1.exe to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\UnitySetup-Windows-IL2CPP-Support-for-Editor-2019.3.4f1.exe' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.771Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://storage.googleapis.com/docscloudstorage/2019.3/UnityDocumentation.zip to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\UnityDocumentation.zip' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.772Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://go.microsoft.com/fwlink/?linkid=2086755 to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\vs_Community.exe' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.772Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://new-translate.unity3d.jp/v1/live/54/2019.3/zh-hans to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\zh-hans.po' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.772Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://download.unitychina.cn/download_unity/3274385dcda2/Windows64EditorInstaller/UnitySetup64-2019.3.4f1.exe to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\UnitySetup64-2019.3.4f1.exe' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:24.078Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"EditorDownloader"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Editor Download 2019.3.4f1: downloads starting, total size: 1.89GB)' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:24.079Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadManager"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'download ended with status: 3 C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\vs_Community.exe' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:27.818Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"warn"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Something went wrong while downloading https://storage.googleapis.com/docscloudstorage/2019.3/UnityDocumentation.zip Error: connect ETIMEDOUT 172.217.160.112:443 Error: connect ETIMEDOUT 172.217.160.112:443\\n    at Object.exports._errnoException (util.js:1024:11)\\n    at exports._exceptionWithHostPort (util.js:1047:20)\\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1150:14)' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:44.780Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"warn"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Something went wrong while checking progress of https://storage.googleapis.com/docscloudstorage/2019.3/UnityDocumentation.zip Error: connect ETIMEDOUT 172.217.160.112:443 Error: connect ETIMEDOUT 172.217.160.112:443\\n    at Object.exports._errnoException (util.js:1024:11)\\n    at exports._exceptionWithHostPort (util.js:1047:20)\\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1150:14)' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:44.780Z"</span>&#125;</span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
-
-<p>安装完成后再次尝试<code>pip install lxml</code>，再次报错。部分错误信息如下：</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">running</span> <span class="keyword">build_ext</span></span><br><span class="line"><span class="keyword"> </span>   <span class="keyword">building </span><span class="string">'lxml.etree'</span> extension</span><br><span class="line">    creating <span class="keyword">build/temp.linux-aarch64-3.8</span></span><br><span class="line"><span class="keyword"> </span>   creating <span class="keyword">build/temp.linux-aarch64-3.8/src</span></span><br><span class="line"><span class="keyword"> </span>   creating <span class="keyword">build/temp.linux-aarch64-3.8/src/lxml</span></span><br><span class="line"><span class="keyword"> </span>   aarch64-linux-<span class="keyword">android-clang </span>-Wno-unused-result -Wsign-compare -Wunreachable-<span class="meta">code</span> -DNDEBUG -g -fwrapv -O3 -Wall -Oz -fstack-protector-<span class="keyword">strong </span>-Oz -fstack-protector-<span class="keyword">strong </span>-fPIC -DCYTHON_CLINE_IN_TRACEBACK<span class="number">=0</span> -I/<span class="meta">data</span>/<span class="meta">data</span>/com.termux/files/usr/<span class="meta">include</span>/libxml2 -I/<span class="meta">data</span>/<span class="meta">data</span>/com.termux/files/usr/<span class="meta">include</span> -Isrc -Isrc/lxml/includes -I/<span class="meta">data</span>/<span class="meta">data</span>/com.termux/files/usr/<span class="meta">include</span>/python3.<span class="number">8</span> -c src/lxml/etree.c -o <span class="keyword">build/temp.linux-aarch64-3.8/src/lxml/etree.o </span>-w</span><br><span class="line">    unable to execute <span class="string">'aarch64-linux-android-clang'</span>: No such file or directory</span><br></pre></td></tr></table></figure>
-<p>从报错内容可知编译器<code>clang</code>未安装，通过<code>pkg install clang</code>安装后测试安装：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -v</span><br><span class="line">clang version <span class="number">9.0</span><span class="number">.0</span> (tags<span class="regexp">/RELEASE_900/</span><span class="keyword">final</span>)</span><br><span class="line"><span class="string">Target:</span> aarch64-unknown-linux-android</span><br><span class="line">Thread <span class="string">model:</span> posix</span><br><span class="line"><span class="string">InstalledDir:</span> <span class="regexp">/data/</span>data<span class="regexp">/com.termux/</span>files<span class="regexp">/usr/</span>bin</span><br></pre></td></tr></table></figure>
-<p>此时使用安装lxml和PyQuery均不再报错。</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ pip install lxml</span><br><span class="line">Looking in <span class="symbol">indexes:</span> <span class="symbol">https:</span>/<span class="regexp">/pypi.tuna.tsinghua.edu.cn/simple</span></span><br><span class="line">Collecting lxml</span><br><span class="line">  Using cached <span class="symbol">https:</span>/<span class="regexp">/pypi.tuna.tsinghua.edu.cn/packages</span><span class="regexp">/39/</span><span class="number">2</span>b/<span class="number">0</span>a66d5436f237aff76b91e68b4d8c041d145ad0a2cdeefe2c42f76ba2857/lxml-<span class="number">4.5</span>.<span class="number">0</span>.tar.gz (<span class="number">4.5</span> MB)</span><br><span class="line">Installing collected <span class="symbol">packages:</span> lxml</span><br><span class="line">    Running setup.py install <span class="keyword">for</span> lxml ... done</span><br><span class="line">Successfully installed lxml-<span class="number">4.5</span>.<span class="number">0</span></span><br><span class="line">$ pip install pyquery</span><br><span class="line">Looking in <span class="symbol">indexes:</span> <span class="symbol">https:</span>/<span class="regexp">/pypi.tuna.tsinghua.edu.cn/simple</span></span><br><span class="line">Collecting pyquery</span><br><span class="line">  Downloading <span class="symbol">https:</span>/<span class="regexp">/pypi.tuna.tsinghua.edu.cn/packages</span><span class="regexp">/78/</span><span class="number">43</span>/<span class="number">95</span>d42e386c61cb639d1a0b94f0c0b9f0b7d6b981ad3c043a836c8b5bc68b/pyquery-<span class="number">1.4</span>.<span class="number">1</span>-py2.py3-none-any.whl (<span class="number">22</span> kB)</span><br><span class="line">Requirement already <span class="symbol">satisfied:</span> lxml&gt;=<span class="number">2.1</span> in /data/data/com.termux/files/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">python3</span>.8/<span class="title">site</span>-<span class="title">packages</span> (<span class="title">from</span> <span class="title">pyquery</span>) (4.5.0)</span></span><br><span class="line">Requirement already <span class="symbol">satisfied:</span> cssselect&gt;<span class="number">0.7</span>.<span class="number">9</span> in /data/data/com.termux/files/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">python3</span>.8/<span class="title">site</span>-<span class="title">packages</span> (<span class="title">from</span> <span class="title">pyquery</span>) (1.1.0)</span></span><br><span class="line">Installing collected <span class="symbol">packages:</span> pyquery</span><br><span class="line">Successfully installed pyquery-<span class="number">1.4</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>同时在Python中测试导入PyQuery正常：</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ python</span><br><span class="line">Python <span class="number">3.8</span><span class="number">.0</span> (<span class="keyword">default</span>, Dec  <span class="number">5</span> <span class="number">2019</span>, <span class="number">10</span>:<span class="number">53</span>:<span class="number">43</span>)</span><br><span class="line">[Clang <span class="number">8.0</span><span class="number">.7</span> (https:<span class="comment">//android.googlesource.com/toolchain/clang b55f2d4ebfd35bf6 on linux</span></span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery as pq</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到每个下载文件的实际下载链接和保存路径，此次下载的保存路径为<code>C:\Users\canglan\AppData\Local\Temp\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0</code>，进入文件夹，可以看到”UnitySetup64-2019.3.4f1.exe”,”UnitySetup-Windows-IL2CPP-Support-for-Editor-2019.3.4f1.exe”,”vs_Community.exe”三个文件已经下载完成，文档文件和语言包下载失败。</p>
+<h2 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h2><p>对于下载失败的文件，可通过日志记录中的实际下载地址进行下载后继续安装，而已经下载完成的文件可直接安装。其中”vs_Community.exe”也同样只是一个安装器，可以在打开后选择并下载安装Visual Studio及组件。</p>
+<p>如果Unity安装包下载失败，也可通过以下链接下载：</p>
+<ul>
+<li><a href="https://download.unitychina.cn/download_unity/3274385dcda2/Windows64EditorInstaller/UnitySetup64-2019.3.4f1.exe" target="_blank" rel="noopener">https://download.unitychina.cn/download_unity/3274385dcda2/Windows64EditorInstaller/UnitySetup64-2019.3.4f1.exe</a></li>
+</ul>
+<p>最后，独立安装的Unity不会在Unity Hub中显示，如果需要，可以通过”Unity Hub-安装-定位”进行导入，默认路径为<code>C:\Program Files\Unity\Editor\Unity.exe</code>。</p>
+<p>同样的方法也可用于提取其他版本或模块的实际下载链接，单独下载后进行本地安装。安装完成后，可将临时文件夹及安装包删除以释放磁盘空间。</p>
 <hr>
-<p><strong>Termux: 0.83 (Google Play)</strong><br><strong>Python: 3.8.0</strong><br><strong>pip: 20.0.2</strong><br><strong>OS: Andriod 6.0.1</strong></p>
+<p><strong>Unity: 2019.3.4f1</strong><br><strong>Unity Hub: 2.0.0</strong><br><strong>OS: Win10 1909</strong></p>
 <hr>
 
       
@@ -186,14 +193,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://canglan.tech/2020/04/05/Termuxlxml/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://canglan.tech/2020/04/08/UnityInstall/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debug/" rel="tag">Debug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/" rel="tag">Termux</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debug/" rel="tag">Debug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/" rel="tag">Unity3D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win10/" rel="tag">Win10</a></li></ul>
 
 
     </footer>
@@ -204,19 +211,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/08/UnityInstall/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            UnityInstall
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/04/04/TermuxStart/" class="article-nav-link">
+      <a href="/2020/04/05/Termuxlxml/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">TermuxStart</div>
+        <div class="article-nav-title">Termuxlxml</div>
       </a>
     
   </nav>
