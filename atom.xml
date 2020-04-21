@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://canglan.tech/"/>
-  <updated>2020-04-08T03:06:20.000Z</updated>
+  <updated>2020-04-21T08:42:04.000Z</updated>
   <id>https://canglan.tech/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ArmbianSpider</title>
+    <link href="https://canglan.tech/2020/04/21/ArmbianSpider/"/>
+    <id>https://canglan.tech/2020/04/21/ArmbianSpider/</id>
+    <published>2020-04-21T08:42:04.000Z</published>
+    <updated>2020-04-21T08:42:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;为-Armbian-配置-Python-爬虫框架&quot;&gt;&lt;a href=&quot;#为-Armbian-配置-Python-爬虫框架&quot; class=&quot;headerlink&quot; title=&quot;为 Armbian 配置 Python 爬虫框架&quot;&gt;&lt;/a&gt;为 Armbian 配置 Python 爬虫框架&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Armbian&lt;/code&gt;是用于&lt;code&gt;ARM&lt;/code&gt;开发板的基于&lt;code&gt;Debian&lt;/code&gt;和&lt;code&gt;Ubuntu&lt;/code&gt;的计算机操作系统。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;手上正好有一台 N1，装好了 Armbian，之前曾用来测试爬虫，这次记录下配置框架的过程作为备份。&lt;/p&gt;
+&lt;h2 id=&quot;检查-Python-版本&quot;&gt;&lt;a href=&quot;#检查-Python-版本&quot; class=&quot;headerlink&quot; title=&quot;检查 Python 版本&quot;&gt;&lt;/a&gt;检查 Python 版本&lt;/h2&gt;&lt;p&gt;首先检查&lt;code&gt;Python&lt;/code&gt;版本：&lt;/p&gt;
+&lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;root@&lt;/span&gt;aml:~# python -V&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Python &lt;span class=&quot;number&quot;&gt;2.7&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.13&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;root@&lt;/span&gt;aml:~# python3 -V&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Python &lt;span class=&quot;number&quot;&gt;3.5&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Armbian 一般预装好了两个版本的 Python，可根据需要自行选择，只是需要注意指令的不同。 Python 2.X 版本除为了兼容旧程序外，一般不会用到，因此之后提到 Python 均指 Python 3.X。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://canglan.tech/categories/Python/"/>
+    
+    
+      <category term="Armbian" scheme="https://canglan.tech/tags/Armbian/"/>
+    
+      <category term="Python" scheme="https://canglan.tech/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>UnityInstall</title>
@@ -66,11 +96,11 @@
       <category term="Python" scheme="https://canglan.tech/categories/Python/"/>
     
     
+      <category term="Python" scheme="https://canglan.tech/tags/Python/"/>
+    
       <category term="Debug" scheme="https://canglan.tech/tags/Debug/"/>
     
       <category term="Termux" scheme="https://canglan.tech/tags/Termux/"/>
-    
-      <category term="Python" scheme="https://canglan.tech/tags/Python/"/>
     
   </entry>
   

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+   
+  <meta name="keywords" content="折腾,代码,博客" />
+   
+  <meta name="description" content="抬眼望云，俯首拾澜" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    ArmbianSpider |  浮云沧澜
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="浮云沧澜" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+</html>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-ArmbianSpider" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  ArmbianSpider
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/21/ArmbianSpider/" class="article-date">
+  <time datetime="2020-04-21T08:42:04.000Z" itemprop="datePublished">2020-04-21</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.2k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">5分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h1 id="为-Armbian-配置-Python-爬虫框架"><a href="#为-Armbian-配置-Python-爬虫框架" class="headerlink" title="为 Armbian 配置 Python 爬虫框架"></a>为 Armbian 配置 Python 爬虫框架</h1><blockquote>
+<p><code>Armbian</code>是用于<code>ARM</code>开发板的基于<code>Debian</code>和<code>Ubuntu</code>的计算机操作系统。</p>
+</blockquote>
+<p>手上正好有一台 N1，装好了 Armbian，之前曾用来测试爬虫，这次记录下配置框架的过程作为备份。</p>
+<h2 id="检查-Python-版本"><a href="#检查-Python-版本" class="headerlink" title="检查 Python 版本"></a>检查 Python 版本</h2><p>首先检查<code>Python</code>版本：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">root@</span>aml:~# python -V</span><br><span class="line">Python <span class="number">2.7</span><span class="number">.13</span></span><br><span class="line"><span class="symbol">root@</span>aml:~# python3 -V</span><br><span class="line">Python <span class="number">3.5</span><span class="number">.3</span></span><br></pre></td></tr></table></figure>
+
+<p>Armbian 一般预装好了两个版本的 Python，可根据需要自行选择，只是需要注意指令的不同。 Python 2.X 版本除为了兼容旧程序外，一般不会用到，因此之后提到 Python 均指 Python 3.X。</p>
+<a id="more"></a>
+
+<h2 id="使用-PIP-安装"><a href="#使用-PIP-安装" class="headerlink" title="使用 PIP 安装"></a>使用 PIP 安装</h2><p>为 Python 安装和管理软件包时常使用<code>pip</code>，首先检查版本:</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@<span class="symbol">aml:</span>~<span class="comment"># pip3 -V</span></span><br><span class="line">pip <span class="number">20.0</span>.<span class="number">2</span> from /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">python3</span>.5/<span class="title">dist</span>-<span class="title">packages</span>/<span class="title">pip</span> (<span class="title">python</span> 3.5)</span></span><br></pre></td></tr></table></figure>
+<p>Armbian 默认 pip 和 pip3 分别对应 Python 2.X 和 Python 3.X，使用时需要进行区分，可通过以上指令确认。默认情况下，pip 和 pip3 都是 9.X 的旧版本，使用前最好通过<code>pip3 install pip -U</code>升级到支持的最新版。此处所见就是升级到 20.0 版本后的结果，同时升级后会自动将 pip 指令链接到 pip3，因此后续提到 pip 时均指对应于 Python 3.X 的 pip3.</p>
+<p>为了加速下载，可替换 pypi 国内镜像，以 <code>TUNA</code> 镜像源为例:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config <span class="keyword">set</span> <span class="keyword">global</span>.<span class="built_in">index</span>-url http<span class="variable">s:</span>//pypi.tuna.tsinghua.edu.<span class="keyword">cn</span>/simple</span><br></pre></td></tr></table></figure>
+<p>由于旧版本 pip 不支持<code>config</code>指令，也可通过镜像源进行升级:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i <span class="string">https:</span><span class="comment">//pypi.tuna.tsinghua.edu.cn/simple pip -U</span></span><br></pre></td></tr></table></figure>
+
+<p>接下来可通过 pip 安装爬虫框架需要的包，以<code>lxml</code>为例，部分输出如下:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@aml:~<span class="comment"># pip install lxml</span></span><br><span class="line">Collecting lxml</span><br><span class="line">Installing collected packages: lxml</span><br><span class="line">    Running setup.py install <span class="keyword">for</span> lxml ... error</span><br><span class="line">    ERROR: Command errored out with <span class="keyword">exit</span> status <span class="number">1</span>:</span><br><span class="line">    ...</span><br><span class="line">    compilation terminated.</span><br><span class="line">    Compile failed: command <span class="string">'aarch64-linux-gnu-gcc'</span> failed with <span class="keyword">exit</span> status <span class="number">1</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>可以看到，与在 <code>Termux</code> 中的情况类似，编译失败，但是这次的情况中，<code>gcc</code>已经预置了:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@aml:~# gcc -v</span><br><span class="line"><span class="keyword">Using</span> built-<span class="keyword">in</span> specs.</span><br><span class="line">COLLECT_GCC=gcc</span><br><span class="line">COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/<span class="number">6</span>/lto-<span class="keyword">wrapper</span></span><br><span class="line">Target: aarch64-linux-gnu</span><br><span class="line">Thread model: posix</span><br><span class="line">gcc <span class="keyword">version</span> <span class="number">6.3</span><span class="number">.0</span> <span class="number">20170516</span> (Debian <span class="number">6.3</span><span class="number">.0</span><span class="number">-18</span>+deb9u1)</span><br></pre></td></tr></table></figure>
+<p>因此需要采用其他解决办法。</p>
+<h2 id="使用-APT-安装"><a href="#使用-APT-安装" class="headerlink" title="使用 APT 安装"></a>使用 APT 安装</h2><p>在 Armbian 中，还可以通过<code>apt</code>安装 Python 软件包，可通过<code>apt list | grep python3-*</code>查看支持的包，部分输出如下:</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">root@</span>aml:~# apt list | grep python3-*</span><br><span class="line">python3-aalib/oldstable,oldstable <span class="number">0.3</span><span class="number">.2</span><span class="number">-1</span> all</span><br><span class="line">python3-<span class="keyword">abstract</span>-rendering/oldstable <span class="number">0.5</span><span class="number">.1</span><span class="number">-1</span>+b1 arm64</span><br><span class="line">python3-acme/oldstable,oldstable,oldstable-updates,oldstable-updates <span class="number">0.28</span><span class="number">.0</span><span class="number">-1</span>~deb9u2 all</span><br><span class="line">python3-acora/oldstable <span class="number">2.0</span><span class="number">-2</span> arm64</span><br><span class="line">python3-acoustid/oldstable,oldstable <span class="number">1.1</span><span class="number">.2</span><span class="number">-2</span> all</span><br><span class="line">python3-actdiag/oldstable,oldstable <span class="number">0.5</span><span class="number">.4</span>+dfsg<span class="number">-1</span> all</span><br><span class="line">python3-activipy/oldstable,oldstable <span class="number">0.1</span><span class="number">-5</span> all</span><br><span class="line">python3-adal/oldstable,oldstable <span class="number">0.4</span><span class="number">.4</span><span class="number">-1</span> all</span><br><span class="line">python3-adios/oldstable <span class="number">1.11</span><span class="number">.0</span><span class="number">-1</span>+b1 arm64</span><br><span class="line">python3-admesh/oldstable <span class="number">0.98</span><span class="number">.5</span><span class="number">-1</span>+b2 arm64</span><br><span class="line">python3-aeidon/oldstable,oldstable <span class="number">1.0</span><span class="number">-1</span> all</span><br><span class="line">python3-affine/oldstable,oldstable <span class="number">2.0</span><span class="number">.0</span><span class="number">-1</span> all</span><br><span class="line">python3-afl/oldstable <span class="number">0.5</span><span class="number">.5</span><span class="number">-1</span> arm64</span><br><span class="line">python3-aiocoap/oldstable,oldstable <span class="number">0.1</span>+<span class="number">9</span>ae36f4<span class="number">-1</span> all</span><br><span class="line">python3-aiodns/oldstable,oldstable <span class="number">1.1</span><span class="number">.1</span><span class="number">-1</span> all</span><br><span class="line">python3-aioeventlet/oldstable,oldstable <span class="number">0.5</span><span class="number">.1</span><span class="number">-1</span> all</span><br><span class="line">python3-aiohttp/oldstable <span class="number">1.2</span><span class="number">.0</span><span class="number">-1</span> arm64</span><br><span class="line">python3-aiohttp-dbg/oldstable <span class="number">1.2</span><span class="number">.0</span><span class="number">-1</span> arm64</span><br><span class="line">python3-aiohttp-jinja2/oldstable,oldstable <span class="number">0.8</span><span class="number">.0</span><span class="number">-1</span> all</span><br><span class="line">python3-aiohttp-mako/oldstable,oldstable <span class="number">0.0</span><span class="number">.1</span><span class="number">-1</span> all</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>因此可通过<code>apt install python3-lxml</code>进行安装，为了方便这里以安装<code>PyQuery</code>为例，lxml 会作为依赖项同时安装:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">root@am<span class="variable">l:</span>~# apt install <span class="keyword">python3</span>-pyquery</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following additional packages will <span class="keyword">be</span> installed:</span><br><span class="line">  <span class="keyword">python3</span>-lxml</span><br><span class="line">Suggested package<span class="variable">s:</span></span><br><span class="line">  <span class="keyword">python3</span>-lxml-dbg <span class="keyword">python</span>-lxml-doc</span><br><span class="line">Recommended package<span class="variable">s:</span></span><br><span class="line">  <span class="keyword">python3</span>-bs4 <span class="keyword">python3</span>-html5lib</span><br><span class="line">The following NEW packages will <span class="keyword">be</span> installed:</span><br><span class="line">  <span class="keyword">python3</span>-lxml <span class="keyword">python3</span>-pyquery</span><br><span class="line"><span class="number">0</span> upgraded, <span class="number">2</span> newly installed, <span class="number">0</span> <span class="keyword">to</span> <span class="built_in">remove</span> <span class="built_in">and</span> <span class="number">7</span> not upgraded.</span><br><span class="line">Need <span class="keyword">to</span> <span class="built_in">get</span> <span class="number">0</span> B/<span class="number">739</span> kB of archives.</span><br><span class="line">After this operation, <span class="number">3163</span> kB of additional disk space will <span class="keyword">be</span> used.</span><br><span class="line">Do you want <span class="keyword">to</span> <span class="keyword">continue</span>? [Y/n]</span><br><span class="line">Selecting previously unselected package <span class="keyword">python3</span>-lxml.</span><br><span class="line">(Reading database ... <span class="number">46263</span> <span class="keyword">files</span> <span class="built_in">and</span> directories currently installed.)</span><br><span class="line">Preparing <span class="keyword">to</span> unpack .../<span class="keyword">python3</span>-lxml_3.<span class="number">7.1</span>-<span class="number">1</span>_arm64.<span class="keyword">deb</span> ...</span><br><span class="line">Unpacking <span class="keyword">python3</span>-lxml (<span class="number">3.7</span>.<span class="number">1</span>-<span class="number">1</span>) ...</span><br><span class="line">Selecting previously unselected package <span class="keyword">python3</span>-pyquery.</span><br><span class="line">Preparing <span class="keyword">to</span> unpack .../<span class="keyword">python3</span>-pyquery_1.<span class="number">2.9</span>-<span class="number">2</span>_all.<span class="keyword">deb</span> ...</span><br><span class="line">Unpacking <span class="keyword">python3</span>-pyquery (<span class="number">1.2</span>.<span class="number">9</span>-<span class="number">2</span>) ...</span><br><span class="line">Setting <span class="keyword">up</span> <span class="keyword">python3</span>-lxml (<span class="number">3.7</span>.<span class="number">1</span>-<span class="number">1</span>) ...</span><br><span class="line">Setting <span class="keyword">up</span> <span class="keyword">python3</span>-pyquery (<span class="number">1.2</span>.<span class="number">9</span>-<span class="number">2</span>) ...</span><br></pre></td></tr></table></figure>
+
+<p>然后在 Python 中测试导入:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@aml:~# python3</span><br><span class="line">Python 3.5.3 (default, Sep 27 2018, 17:25:39)</span><br><span class="line">[GCC 6.3.0 20170516] on linux</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; import pyquery as pq</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>测试无错误，安装成功。</p>
+<p>对于其他依赖 lxml 的爬虫框架，在 Armbian 上直接使用 pip 安装也有可能因为编译失败而无法安装，也可以使用 apt 进行安装</p>
+<h2 id="安装-WebDriver"><a href="#安装-WebDriver" class="headerlink" title="安装 WebDriver"></a>安装 WebDriver</h2><p>基于<code>Selenium</code>和<code>WebDriver</code>可以进行 Web 应用自动化测试，在爬虫中使用时可以很方便地解决动态渲染网页和验证码等问题，但是<code>Chrome</code>和对应的<code>ChromeDriver</code>都没有提供 Arm 版本，不能直接使用。</p>
+<p>因此在 Armbian 中需要使用替代，使用 apt 安装 chromium 和 chromedriver:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@aml</span><span class="symbol">:~</span><span class="comment"># apt install chromium chromedriver</span></span><br></pre></td></tr></table></figure>
+<p>亲测安装后可以正常使用基于 Selenium 和 WebDriver 的爬虫，但是需要注意 chromium 安装时占用的空间和运行时占用的内存都比较大。</p>
+<hr>
+<p><strong>Armbian: 5.77</strong><br><strong>Kernel: 5.0.2-aml-s905</strong><br><strong>Python: 3.5.3</strong></p>
+<hr>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong s>
+              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://canglan.tech/2020/04/21/ArmbianSpider/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Armbian/" rel="tag">Armbian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/04/08/UnityInstall/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">UnityInstall</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '9YCUQJBlu2WYqQdUjxL4g542-MdYXbMMI',
+        app_key: 'ytFa2oJbY5oTy2BBw3275gHR',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '回首相望，唯留足迹',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        canglan
+      </li>
+      <li>
+        
+        Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="浮云沧澜"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['云澜生处，若见君', '但见浮云，风与伴', '沧澜袭岸，往昔叹'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/js/ayer.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+</html>
