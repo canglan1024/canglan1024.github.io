@@ -28,7 +28,7 @@
       &lt;h1 id=&quot;为-Armbian-配置-Python-爬虫框架&quot;&gt;&lt;a href=&quot;#为-Armbian-配置-Python-爬虫框架&quot; class=&quot;headerlink&quot; title=&quot;为 Armbian 配置 Python 爬虫框架&quot;&gt;&lt;/a&gt;为 Armbian 配置 Python 爬虫框架&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;Armbian&lt;/code&gt;是用于&lt;code&gt;ARM&lt;/code&gt;开发板的基于&lt;code&gt;Debian&lt;/code&gt;和&lt;code&gt;Ubuntu&lt;/code&gt;的计算机操作系统。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;手上正好有一台 N1，装好了 Armbian，之前曾用来测试爬虫，这次记录下配置框架的过程作为备份。&lt;/p&gt;
+&lt;p&gt;手上正好有一台 &lt;strong&gt;N1&lt;/strong&gt;，装好了 Armbian，之前曾用来测试爬虫，这次记录下配置框架的过程作为备份。&lt;/p&gt;
 &lt;h2 id=&quot;检查-Python-版本&quot;&gt;&lt;a href=&quot;#检查-Python-版本&quot; class=&quot;headerlink&quot; title=&quot;检查 Python 版本&quot;&gt;&lt;/a&gt;检查 Python 版本&lt;/h2&gt;&lt;p&gt;首先检查&lt;code&gt;Python&lt;/code&gt;版本：&lt;/p&gt;
 &lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;root@&lt;/span&gt;aml:~# python -V&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Python &lt;span class=&quot;number&quot;&gt;2.7&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.13&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;root@&lt;/span&gt;aml:~# python3 -V&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Python &lt;span class=&quot;number&quot;&gt;3.5&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -85,9 +85,9 @@
     <summary type="html">
     
       &lt;h1 id=&quot;Termux-安装-Python-lxml-库&quot;&gt;&lt;a href=&quot;#Termux-安装-Python-lxml-库&quot; class=&quot;headerlink&quot; title=&quot;Termux 安装 Python lxml 库&quot;&gt;&lt;/a&gt;Termux 安装 Python lxml 库&lt;/h1&gt;&lt;p&gt;在&lt;code&gt;Termux&lt;/code&gt;中安装&lt;code&gt;Python&lt;/code&gt;后，为了尝试在手机上测试爬虫，尝试安装&lt;code&gt;PyQuery&lt;/code&gt;库，在安装依赖&lt;code&gt;lxml&lt;/code&gt;库时报错。&lt;/p&gt;
-&lt;p&gt;部分错误信息如下：&lt;/p&gt;
+&lt;p&gt;部分错误信息如下:&lt;/p&gt;
 &lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Complete output (&lt;span class=&quot;number&quot;&gt;113&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;lines&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Building lxml &lt;span class=&quot;built_in&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4.5&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Building &lt;span class=&quot;keyword&quot;&gt;without&lt;/span&gt; Cython.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ERROR: b&lt;span class=&quot;string&quot;&gt;&#39;/data/data/com.termux/files/usr/bin/sh: 1: xslt-config: not found\n&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ** make sure &lt;span class=&quot;keyword&quot;&gt;the&lt;/span&gt; development packages &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; libxml2 &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; libxslt are installed **&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;从报错内容可知依赖库&lt;code&gt;libxml2&lt;/code&gt;和&lt;code&gt;libxslt&lt;/code&gt;未安装，通过&lt;code&gt;pkg&lt;/code&gt;安装依赖：&lt;/p&gt;
+&lt;p&gt;从报错内容可知依赖库&lt;code&gt;libxml2&lt;/code&gt;和&lt;code&gt;libxslt&lt;/code&gt;未安装，通过&lt;code&gt;pkg&lt;/code&gt;安装依赖:&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pkg install libxml2 libxslt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -114,11 +114,11 @@
     <summary type="html">
     
       &lt;h1 id=&quot;Termux-入门&quot;&gt;&lt;a href=&quot;#Termux-入门&quot; class=&quot;headerlink&quot; title=&quot;Termux 入门&quot;&gt;&lt;/a&gt;Termux 入门&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/termux-1.png&quot; alt=&quot;Termux&quot;&gt;&lt;/p&gt;
-&lt;p&gt;最近开始接触Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。&lt;br&gt;本篇作为入门，先粗略介绍一下软件和操作。  &lt;/p&gt;
+&lt;p&gt;最近开始接触 Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。&lt;br&gt;本篇作为入门，先粗略介绍一下软件和操作。  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;本篇内容参考了博客文章&lt;a href=&quot;https://www.sqlsec.com/2018/05/termux.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Termux 高级终端安装使用配置教程-国光&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;1-Termux简介&quot;&gt;&lt;a href=&quot;#1-Termux简介&quot; class=&quot;headerlink&quot; title=&quot;1.Termux简介&quot;&gt;&lt;/a&gt;1.Termux简介&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Termux&lt;/code&gt;是一个&lt;strong&gt;Android&lt;/strong&gt;平台上的终端模拟器，自带&lt;strong&gt;Linux&lt;/strong&gt;运行环境，无需root权限即可使用。通过内置的&lt;strong&gt;APT&lt;/strong&gt;包管理器，可以如Linux系统一样配置&lt;strong&gt;Python&lt;/strong&gt;，&lt;strong&gt;MySQL&lt;/strong&gt;，&lt;strong&gt;PHP&lt;/strong&gt;，&lt;strong&gt;NGINX&lt;/strong&gt;等，便于在手机、平板等移动设备上进行编程、调试等工作。&lt;/p&gt;
+&lt;h2 id=&quot;1-Termux简介&quot;&gt;&lt;a href=&quot;#1-Termux简介&quot; class=&quot;headerlink&quot; title=&quot;1.Termux简介&quot;&gt;&lt;/a&gt;1.Termux简介&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Termux&lt;/code&gt;是一个 &lt;code&gt;Android&lt;/code&gt; 平台上的终端模拟器，自带 &lt;code&gt;Linux&lt;/code&gt; 运行环境，无需 root 权限即可使用。通过内置的 &lt;code&gt;APT&lt;/code&gt; 包管理器，可以如 Linux 系统一样配置 &lt;code&gt;Python&lt;/code&gt;，&lt;code&gt;MySQL&lt;/code&gt;，&lt;code&gt;PHP&lt;/code&gt;，&lt;code&gt;NGINX&lt;/code&gt; 等，便于在手机、平板等移动设备上进行编程、调试等工作。&lt;/p&gt;
     
     </summary>
     
@@ -146,7 +146,7 @@
       &lt;h1 id=&quot;Markdown-高级功能&quot;&gt;&lt;a href=&quot;#Markdown-高级功能&quot; class=&quot;headerlink&quot; title=&quot;Markdown 高级功能&quot;&gt;&lt;/a&gt;Markdown 高级功能&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;本篇内容参考了&lt;a href=&quot;https://www.runoob.com/markdown/md-advance.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown 高级技巧-菜鸟教程&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;1-符号转义&quot;&gt;&lt;a href=&quot;#1-符号转义&quot; class=&quot;headerlink&quot; title=&quot;1.符号转义&quot;&gt;&lt;/a&gt;1.符号转义&lt;/h2&gt;&lt;p&gt;Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号&lt;code&gt;\&lt;/code&gt;，同时通过该符号所设置的格式也不会被解析。  &lt;/p&gt;
+&lt;h2 id=&quot;1-符号转义&quot;&gt;&lt;a href=&quot;#1-符号转义&quot; class=&quot;headerlink&quot; title=&quot;1.符号转义&quot;&gt;&lt;/a&gt;1.符号转义&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Markdown&lt;/code&gt;语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号&lt;code&gt;\&lt;/code&gt;，同时通过该符号所设置的格式也不会被解析。  &lt;/p&gt;
 &lt;figure class=&quot;highlight taggerscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;**加粗**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;\*&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;\*&lt;/span&gt;转义&lt;span class=&quot;symbol&quot;&gt;\*&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;\*&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;strong&gt;加粗&lt;/strong&gt;&lt;br&gt;**转义**  &lt;/p&gt;
     
@@ -200,11 +200,11 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Markdown-HTML-标签&quot;&gt;&lt;a href=&quot;#Markdown-HTML-标签&quot; class=&quot;headerlink&quot; title=&quot;Markdown HTML 标签&quot;&gt;&lt;/a&gt;Markdown HTML 标签&lt;/h1&gt;&lt;p&gt;Markdown可以解析HMTL标签，因此可以使用HTML标签实现Markdown基本语法，同时实现一些Markdown不支持的功能&lt;/p&gt;
+      &lt;h1 id=&quot;Markdown-HTML-标签&quot;&gt;&lt;a href=&quot;#Markdown-HTML-标签&quot; class=&quot;headerlink&quot; title=&quot;Markdown HTML 标签&quot;&gt;&lt;/a&gt;Markdown HTML 标签&lt;/h1&gt;&lt;p&gt;Markdown 可以解析 HMTL 标签，因此可以使用 HTML 标签实现 Markdown 基本语法，同时实现一些 Markdown 不支持的功能&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;本篇内容参考了博客文章&lt;a href=&quot;https://wuchenxu.com/2015/12/30/Markdown-html-compare/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown语法对应的HTML标签实现-Wu Chenxu&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h2&gt;&lt;p&gt;使用HTML标签实现多级标题&lt;/p&gt;
+&lt;h2 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h2&gt;&lt;p&gt;使用 HTML 标签实现多级标题&lt;/p&gt;
 &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt; 标题 &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt; 标题 &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h3&lt;/span&gt;&amp;gt;&lt;/span&gt; 标题 &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h3&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h1&gt; 标题 &lt;/h1&gt;
@@ -232,10 +232,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Markdown基础语法与测试&quot;&gt;&lt;a href=&quot;#Markdown基础语法与测试&quot; class=&quot;headerlink&quot; title=&quot;Markdown基础语法与测试&quot;&gt;&lt;/a&gt;Markdown基础语法与测试&lt;/h1&gt;&lt;blockquote&gt;
+      &lt;h1 id=&quot;Markdown-基础语法与测试&quot;&gt;&lt;a href=&quot;#Markdown-基础语法与测试&quot; class=&quot;headerlink&quot; title=&quot;Markdown 基础语法与测试&quot;&gt;&lt;/a&gt;Markdown 基础语法与测试&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;本篇内容参考了博客文章&lt;a href=&quot;https://www.jianshu.com/p/191d1e21f7ed&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown基本语法-高鸿祥&lt;/a&gt;，首先进行感谢。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h2&gt;&lt;p&gt;文字前加#设置标题&lt;/p&gt;
+&lt;h2 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h2&gt;&lt;p&gt;文字前加 # 设置标题&lt;/p&gt;
 &lt;figure class=&quot;highlight clean&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 一级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## 二级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;### 三级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#### 四级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;##### ……&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;显示效果如下：&lt;/p&gt;
 &lt;blockquote&gt;

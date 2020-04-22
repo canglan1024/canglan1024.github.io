@@ -113,7 +113,7 @@
       <h1 id="为-Armbian-配置-Python-爬虫框架"><a href="#为-Armbian-配置-Python-爬虫框架" class="headerlink" title="为 Armbian 配置 Python 爬虫框架"></a>为 Armbian 配置 Python 爬虫框架</h1><blockquote>
 <p><code>Armbian</code>是用于<code>ARM</code>开发板的基于<code>Debian</code>和<code>Ubuntu</code>的计算机操作系统。</p>
 </blockquote>
-<p>手上正好有一台 N1，装好了 Armbian，之前曾用来测试爬虫，这次记录下配置框架的过程作为备份。</p>
+<p>手上正好有一台 <strong>N1</strong>，装好了 Armbian，之前曾用来测试爬虫，这次记录下配置框架的过程作为备份。</p>
 <h2 id="检查-Python-版本"><a href="#检查-Python-版本" class="headerlink" title="检查 Python 版本"></a>检查 Python 版本</h2><p>首先检查<code>Python</code>版本：</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">root@</span>aml:~# python -V</span><br><span class="line">Python <span class="number">2.7</span><span class="number">.13</span></span><br><span class="line"><span class="symbol">root@</span>aml:~# python3 -V</span><br><span class="line">Python <span class="number">3.5</span><span class="number">.3</span></span><br></pre></td></tr></table></figure>
 
@@ -268,9 +268,9 @@
 
       
       <h1 id="Termux-安装-Python-lxml-库"><a href="#Termux-安装-Python-lxml-库" class="headerlink" title="Termux 安装 Python lxml 库"></a>Termux 安装 Python lxml 库</h1><p>在<code>Termux</code>中安装<code>Python</code>后，为了尝试在手机上测试爬虫，尝试安装<code>PyQuery</code>库，在安装依赖<code>lxml</code>库时报错。</p>
-<p>部分错误信息如下：</p>
+<p>部分错误信息如下:</p>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Complete output (<span class="number">113</span> <span class="keyword">lines</span>):</span><br><span class="line">    Building lxml <span class="built_in">version</span> <span class="number">4.5</span><span class="number">.0</span>.</span><br><span class="line">    Building <span class="keyword">without</span> Cython.</span><br><span class="line">    ERROR: b<span class="string">'/data/data/com.termux/files/usr/bin/sh: 1: xslt-config: not found\n'</span></span><br><span class="line">    ** make sure <span class="keyword">the</span> development packages <span class="keyword">of</span> libxml2 <span class="keyword">and</span> libxslt are installed **</span><br></pre></td></tr></table></figure>
-<p>从报错内容可知依赖库<code>libxml2</code>和<code>libxslt</code>未安装，通过<code>pkg</code>安装依赖：</p>
+<p>从报错内容可知依赖库<code>libxml2</code>和<code>libxslt</code>未安装，通过<code>pkg</code>安装依赖:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install libxml2 libxslt</span><br></pre></td></tr></table></figure>
       
       <a class="article-more-link" href="/2020/04/05/Termuxlxml/">阅读更多...</a>
@@ -345,11 +345,11 @@
 
       
       <h1 id="Termux-入门"><a href="#Termux-入门" class="headerlink" title="Termux 入门"></a>Termux 入门</h1><p><img src="/img/termux-1.png" alt="Termux"></p>
-<p>最近开始接触Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。<br>本篇作为入门，先粗略介绍一下软件和操作。  </p>
+<p>最近开始接触 Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。<br>本篇作为入门，先粗略介绍一下软件和操作。  </p>
 <blockquote>
 <p>本篇内容参考了博客文章<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程-国光</a>，首先进行感谢。</p>
 </blockquote>
-<h2 id="1-Termux简介"><a href="#1-Termux简介" class="headerlink" title="1.Termux简介"></a>1.Termux简介</h2><p><code>Termux</code>是一个<strong>Android</strong>平台上的终端模拟器，自带<strong>Linux</strong>运行环境，无需root权限即可使用。通过内置的<strong>APT</strong>包管理器，可以如Linux系统一样配置<strong>Python</strong>，<strong>MySQL</strong>，<strong>PHP</strong>，<strong>NGINX</strong>等，便于在手机、平板等移动设备上进行编程、调试等工作。</p>
+<h2 id="1-Termux简介"><a href="#1-Termux简介" class="headerlink" title="1.Termux简介"></a>1.Termux简介</h2><p><code>Termux</code>是一个 <code>Android</code> 平台上的终端模拟器，自带 <code>Linux</code> 运行环境，无需 root 权限即可使用。通过内置的 <code>APT</code> 包管理器，可以如 Linux 系统一样配置 <code>Python</code>，<code>MySQL</code>，<code>PHP</code>，<code>NGINX</code> 等，便于在手机、平板等移动设备上进行编程、调试等工作。</p>
       
       <a class="article-more-link" href="/2020/04/04/TermuxStart/">阅读更多...</a>
       
@@ -425,7 +425,7 @@
       <h1 id="Markdown-高级功能"><a href="#Markdown-高级功能" class="headerlink" title="Markdown 高级功能"></a>Markdown 高级功能</h1><blockquote>
 <p>本篇内容参考了<a href="https://www.runoob.com/markdown/md-advance.html" target="_blank" rel="noopener">Markdown 高级技巧-菜鸟教程</a>，首先进行感谢。</p>
 </blockquote>
-<h2 id="1-符号转义"><a href="#1-符号转义" class="headerlink" title="1.符号转义"></a>1.符号转义</h2><p>Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号<code>\</code>，同时通过该符号所设置的格式也不会被解析。  </p>
+<h2 id="1-符号转义"><a href="#1-符号转义" class="headerlink" title="1.符号转义"></a>1.符号转义</h2><p><code>Markdown</code>语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号<code>\</code>，同时通过该符号所设置的格式也不会被解析。  </p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**加粗**</span><br><span class="line"><span class="symbol">\*</span><span class="symbol">\*</span>转义<span class="symbol">\*</span><span class="symbol">\*</span></span><br></pre></td></tr></table></figure>
 <p><strong>加粗</strong><br>**转义**  </p>
       
@@ -503,10 +503,10 @@
       <h1 id="使用-CNAME-文件解决-Hexo-发布后-GitHub-Pages-自定义域名失效"><a href="#使用-CNAME-文件解决-Hexo-发布后-GitHub-Pages-自定义域名失效" class="headerlink" title="使用 CNAME 文件解决 Hexo 发布后 GitHub Pages 自定义域名失效"></a>使用 CNAME 文件解决 Hexo 发布后 GitHub Pages 自定义域名失效</h1><blockquote>
 <p>本篇内容参考了博客文章<a href="https://www.xuxusheng.com/post/hexo发布之后gitpage自定义域名失效" target="_blank" rel="noopener">hexo发布之后gitpage自定义域名失效-许盛</a>，首先进行感谢。</p>
 </blockquote>
-<p>使用Hexo将博客托管到GitHub Pages，每次使用 <code>hexo deploy</code> 发布后，使用原域名访问博客出现404  </p>
-<p>检查Settings-Github Pages下的Custom domain，发现原自定义域名被清空，重新填入后恢复访问  </p>
-<p>为了解决这种情况，可在source文件夹下新建CNAME文件，文件内填入自定义域名，重新发布  </p>
-<p><strong>注意：CNAME文件无后缀，文件内容仅填入域名</strong></p>
+<p>使用<code>Hexo</code>将博客托管到 GitHub Pages，每次使用 <code>hexo deploy</code> 发布后，使用原域名访问博客出现 404  </p>
+<p>检查 “Settings-Github Pages” 下的 Custom domain，发现原自定义域名被清空，重新填入后恢复访问  </p>
+<p>为了解决这种情况，可在 source 文件夹下新建 CNAME 文件，文件内填入自定义域名，重新发布  </p>
+<p><strong>注意：CNAME 文件无后缀，文件内容仅填入域名</strong></p>
 <hr>
 <p><strong>Hexo: 4.2.0</strong><br><strong>OS: Win10 1909</strong></p>
 <hr>
@@ -580,11 +580,11 @@
       
 
       
-      <h1 id="Markdown-HTML-标签"><a href="#Markdown-HTML-标签" class="headerlink" title="Markdown HTML 标签"></a>Markdown HTML 标签</h1><p>Markdown可以解析HMTL标签，因此可以使用HTML标签实现Markdown基本语法，同时实现一些Markdown不支持的功能</p>
+      <h1 id="Markdown-HTML-标签"><a href="#Markdown-HTML-标签" class="headerlink" title="Markdown HTML 标签"></a>Markdown HTML 标签</h1><p>Markdown 可以解析 HMTL 标签，因此可以使用 HTML 标签实现 Markdown 基本语法，同时实现一些 Markdown 不支持的功能</p>
 <blockquote>
 <p>本篇内容参考了博客文章<a href="https://wuchenxu.com/2015/12/30/Markdown-html-compare/" target="_blank" rel="noopener">Markdown语法对应的HTML标签实现-Wu Chenxu</a>，首先进行感谢。</p>
 </blockquote>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>使用HTML标签实现多级标题</p>
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>使用 HTML 标签实现多级标题</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> 标题 <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span> 标题 <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span> 标题 <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h1> 标题 </h1>
@@ -662,10 +662,10 @@
       
 
       
-      <h1 id="Markdown基础语法与测试"><a href="#Markdown基础语法与测试" class="headerlink" title="Markdown基础语法与测试"></a>Markdown基础语法与测试</h1><blockquote>
+      <h1 id="Markdown-基础语法与测试"><a href="#Markdown-基础语法与测试" class="headerlink" title="Markdown 基础语法与测试"></a>Markdown 基础语法与测试</h1><blockquote>
 <p>本篇内容参考了博客文章<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">Markdown基本语法-高鸿祥</a>，首先进行感谢。</p>
 </blockquote>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>文字前加#设置标题</p>
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>文字前加 # 设置标题</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### ……</span><br></pre></td></tr></table></figure>
 <p>显示效果如下：</p>
 <blockquote>

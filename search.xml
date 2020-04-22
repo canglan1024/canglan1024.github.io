@@ -6,7 +6,7 @@
     <content><![CDATA[<h1 id="为-Armbian-配置-Python-爬虫框架"><a href="#为-Armbian-配置-Python-爬虫框架" class="headerlink" title="为 Armbian 配置 Python 爬虫框架"></a>为 Armbian 配置 Python 爬虫框架</h1><blockquote>
 <p><code>Armbian</code>是用于<code>ARM</code>开发板的基于<code>Debian</code>和<code>Ubuntu</code>的计算机操作系统。</p>
 </blockquote>
-<p>手上正好有一台 N1，装好了 Armbian，之前曾用来测试爬虫，这次记录下配置框架的过程作为备份。</p>
+<p>手上正好有一台 <strong>N1</strong>，装好了 Armbian，之前曾用来测试爬虫，这次记录下配置框架的过程作为备份。</p>
 <h2 id="检查-Python-版本"><a href="#检查-Python-版本" class="headerlink" title="检查 Python 版本"></a>检查 Python 版本</h2><p>首先检查<code>Python</code>版本：</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="symbol">root@</span>aml:~# python -V</span><br><span class="line">Python <span class="number">2.7</span><span class="number">.13</span></span><br><span class="line"><span class="symbol">root@</span>aml:~# python3 -V</span><br><span class="line">Python <span class="number">3.5</span><span class="number">.3</span></span><br></pre></td></tr></table></figure>
 
@@ -61,7 +61,7 @@
 <p>新版<code>Unity</code>不再提供独立的安装包，而是通过<code>Unity Hub</code>进行安装和模块管理，但是由于网络原因，可能会出现下载失败而导致的安装过程卡住的情况，在此记录一次安装过程并提供一种本地安装解决方案。</p>
 <a id="more"></a>
 
-<h2 id="安装选项"><a href="#安装选项" class="headerlink" title="安装选项"></a>安装选项</h2><p>在Unity Hub中选择安装”Unity 2019.3.4f1”，并选择以下模块：</p>
+<h2 id="安装选项"><a href="#安装选项" class="headerlink" title="安装选项"></a>安装选项</h2><p>在 Unity Hub 中选择安装 “Unity 2019.3.4f1”，并选择以下模块：</p>
 <ul>
 <li>Microsoft Visual Studio Community 2019</li>
 <li>Windows Build Support(IL2CPP)</li>
@@ -69,16 +69,16 @@
 <li>Language-简体中文</li>
 </ul>
 <p>在弹出的安装窗口下方，下载进度卡在”66%”。</p>
-<h2 id="排错"><a href="#排错" class="headerlink" title="排错"></a>排错</h2><p>此时检查Unity Hub日志，Win10下的日志文件路径为<code>C:\Users\canglan\AppData\Roaming\UnityHub\logs\info-log.json</code>，相关记录如下：</p>
+<h2 id="排错"><a href="#排错" class="headerlink" title="排错"></a>排错</h2><p>此时检查 Unity Hub 日志，Win10 下的日志文件路径为<code>C:\Users\canglan\AppData\Roaming\UnityHub\logs\info-log.json</code>，相关记录如下：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"EditorDownloader"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Editor Downloader 2019.3.4f1: starting' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:21.241Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadsCluster"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Cluster total download size: 375.83MB' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.770Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadsCluster"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Cluster cluster-2019.3.4f1: downloads starting' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.771Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://download.unitychina.cn/download_unity/3274385dcda2/TargetSupportInstaller/UnitySetup-Windows-IL2CPP-Support-for-Editor-2019.3.4f1.exe to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\UnitySetup-Windows-IL2CPP-Support-for-Editor-2019.3.4f1.exe' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.771Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://storage.googleapis.com/docscloudstorage/2019.3/UnityDocumentation.zip to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\UnityDocumentation.zip' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.772Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://go.microsoft.com/fwlink/?linkid=2086755 to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\vs_Community.exe' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.772Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://new-translate.unity3d.jp/v1/live/54/2019.3/zh-hans to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\zh-hans.po' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:23.772Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Starting the download of https://download.unitychina.cn/download_unity/3274385dcda2/Windows64EditorInstaller/UnitySetup64-2019.3.4f1.exe to C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\UnitySetup64-2019.3.4f1.exe' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:24.078Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"EditorDownloader"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Editor Download 2019.3.4f1: downloads starting, total size: 1.89GB)' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:24.079Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadManager"</span>,<span class="attr">"level"</span>:<span class="string">"info"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'download ended with status: 3 C:\\\\Users\\\\canglan\\\\AppData\\\\Local\\\\Temp\\\\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0\\\\vs_Community.exe' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:27.818Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"warn"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Something went wrong while downloading https://storage.googleapis.com/docscloudstorage/2019.3/UnityDocumentation.zip Error: connect ETIMEDOUT 172.217.160.112:443 Error: connect ETIMEDOUT 172.217.160.112:443\\n    at Object.exports._errnoException (util.js:1024:11)\\n    at exports._exceptionWithHostPort (util.js:1047:20)\\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1150:14)' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:44.780Z"</span>&#125;</span><br><span class="line">&#123;<span class="attr">"moduleName"</span>:<span class="string">"DownloadRequest"</span>,<span class="attr">"level"</span>:<span class="string">"warn"</span>,<span class="attr">"message"</span>:<span class="string">"[ 'Something went wrong while checking progress of https://storage.googleapis.com/docscloudstorage/2019.3/UnityDocumentation.zip Error: connect ETIMEDOUT 172.217.160.112:443 Error: connect ETIMEDOUT 172.217.160.112:443\\n    at Object.exports._errnoException (util.js:1024:11)\\n    at exports._exceptionWithHostPort (util.js:1047:20)\\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1150:14)' ]"</span>,<span class="attr">"timestamp"</span>:<span class="string">"2020-04-08T02:45:44.780Z"</span>&#125;</span><br></pre></td></tr></table></figure>
 
 <p>可以看到每个下载文件的实际下载链接和保存路径，此次下载的保存路径为<code>C:\Users\canglan\AppData\Local\Temp\unityhub-fb6b5820-7942-11ea-b78f-ef02bb27dfc0</code>，进入文件夹，可以看到”UnitySetup64-2019.3.4f1.exe”,”UnitySetup-Windows-IL2CPP-Support-for-Editor-2019.3.4f1.exe”,”vs_Community.exe”三个文件已经下载完成，文档文件和语言包下载失败。</p>
-<h2 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h2><p>对于下载失败的文件，可通过日志记录中的实际下载地址进行下载后继续安装，而已经下载完成的文件可直接安装。其中”vs_Community.exe”也同样只是一个安装器，可以在打开后选择并下载安装Visual Studio及组件。</p>
+<h2 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h2><p>对于下载失败的文件，可通过日志记录中的实际下载地址进行下载后继续安装，而已经下载完成的文件可直接安装。其中 “vs_Community.exe” 也同样只是一个安装器，可以在打开后选择并下载安装 Visual Studio 及组件。</p>
 <p>如果Unity安装包下载失败，也可通过以下链接下载：</p>
 <ul>
 <li><a href="https://download.unitychina.cn/download_unity/3274385dcda2/Windows64EditorInstaller/UnitySetup64-2019.3.4f1.exe" target="_blank" rel="noopener">https://download.unitychina.cn/download_unity/3274385dcda2/Windows64EditorInstaller/UnitySetup64-2019.3.4f1.exe</a></li>
 </ul>
-<p>最后，独立安装的Unity不会在Unity Hub中显示，如果需要，可以通过”Unity Hub-安装-定位”进行导入，默认路径为<code>C:\Program Files\Unity\Editor\Unity.exe</code>。</p>
+<p>最后，独立安装的 Unity 不会在 Unity Hub 中显示，如果需要，可以通过 “Unity Hub-安装-定位” 进行导入，默认路径为<code>C:\Program Files\Unity\Editor\Unity.exe</code>。</p>
 <p>同样的方法也可用于提取其他版本或模块的实际下载链接，单独下载后进行本地安装。安装完成后，可将临时文件夹及安装包删除以释放磁盘空间。</p>
 <hr>
 <p><strong>Unity: 2019.3.4f1</strong><br><strong>Unity Hub: 2.0.0</strong><br><strong>OS: Win10 1909</strong></p>
@@ -97,21 +97,21 @@
     <title>Termuxlxml</title>
     <url>/2020/04/05/Termuxlxml/</url>
     <content><![CDATA[<h1 id="Termux-安装-Python-lxml-库"><a href="#Termux-安装-Python-lxml-库" class="headerlink" title="Termux 安装 Python lxml 库"></a>Termux 安装 Python lxml 库</h1><p>在<code>Termux</code>中安装<code>Python</code>后，为了尝试在手机上测试爬虫，尝试安装<code>PyQuery</code>库，在安装依赖<code>lxml</code>库时报错。</p>
-<p>部分错误信息如下：</p>
+<p>部分错误信息如下:</p>
 <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">Complete output (<span class="number">113</span> <span class="keyword">lines</span>):</span><br><span class="line">    Building lxml <span class="built_in">version</span> <span class="number">4.5</span><span class="number">.0</span>.</span><br><span class="line">    Building <span class="keyword">without</span> Cython.</span><br><span class="line">    ERROR: b<span class="string">'/data/data/com.termux/files/usr/bin/sh: 1: xslt-config: not found\n'</span></span><br><span class="line">    ** make sure <span class="keyword">the</span> development packages <span class="keyword">of</span> libxml2 <span class="keyword">and</span> libxslt are installed **</span><br></pre></td></tr></table></figure>
-<p>从报错内容可知依赖库<code>libxml2</code>和<code>libxslt</code>未安装，通过<code>pkg</code>安装依赖：</p>
+<p>从报错内容可知依赖库<code>libxml2</code>和<code>libxslt</code>未安装，通过<code>pkg</code>安装依赖:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pkg install libxml2 libxslt</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
-<p>安装完成后再次尝试<code>pip install lxml</code>，再次报错。部分错误信息如下：</p>
+<p>安装完成后再次尝试<code>pip install lxml</code>，再次报错。部分错误信息如下:</p>
 <figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">running</span> <span class="keyword">build_ext</span></span><br><span class="line"><span class="keyword"> </span>   <span class="keyword">building </span><span class="string">'lxml.etree'</span> extension</span><br><span class="line">    creating <span class="keyword">build/temp.linux-aarch64-3.8</span></span><br><span class="line"><span class="keyword"> </span>   creating <span class="keyword">build/temp.linux-aarch64-3.8/src</span></span><br><span class="line"><span class="keyword"> </span>   creating <span class="keyword">build/temp.linux-aarch64-3.8/src/lxml</span></span><br><span class="line"><span class="keyword"> </span>   aarch64-linux-<span class="keyword">android-clang </span>-Wno-unused-result -Wsign-compare -Wunreachable-<span class="meta">code</span> -DNDEBUG -g -fwrapv -O3 -Wall -Oz -fstack-protector-<span class="keyword">strong </span>-Oz -fstack-protector-<span class="keyword">strong </span>-fPIC -DCYTHON_CLINE_IN_TRACEBACK<span class="number">=0</span> -I/<span class="meta">data</span>/<span class="meta">data</span>/com.termux/files/usr/<span class="meta">include</span>/libxml2 -I/<span class="meta">data</span>/<span class="meta">data</span>/com.termux/files/usr/<span class="meta">include</span> -Isrc -Isrc/lxml/includes -I/<span class="meta">data</span>/<span class="meta">data</span>/com.termux/files/usr/<span class="meta">include</span>/python3.<span class="number">8</span> -c src/lxml/etree.c -o <span class="keyword">build/temp.linux-aarch64-3.8/src/lxml/etree.o </span>-w</span><br><span class="line">    unable to execute <span class="string">'aarch64-linux-android-clang'</span>: No such file or directory</span><br></pre></td></tr></table></figure>
-<p>从报错内容可知编译器<code>clang</code>未安装，通过<code>pkg install clang</code>安装后测试安装：</p>
+<p>从报错内容可知编译器<code>clang</code>未安装，通过<code>pkg install clang</code>安装后测试安装:</p>
 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">$ gcc -v</span><br><span class="line">clang version <span class="number">9.0</span><span class="number">.0</span> (tags<span class="regexp">/RELEASE_900/</span><span class="keyword">final</span>)</span><br><span class="line"><span class="string">Target:</span> aarch64-unknown-linux-android</span><br><span class="line">Thread <span class="string">model:</span> posix</span><br><span class="line"><span class="string">InstalledDir:</span> <span class="regexp">/data/</span>data<span class="regexp">/com.termux/</span>files<span class="regexp">/usr/</span>bin</span><br></pre></td></tr></table></figure>
-<p>此时使用安装lxml和PyQuery均不再报错。</p>
+<p>此时使用安装 lxml 和 PyQuery 均不再报错。</p>
 <figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">$ pip install lxml</span><br><span class="line">Looking in <span class="symbol">indexes:</span> <span class="symbol">https:</span>/<span class="regexp">/pypi.tuna.tsinghua.edu.cn/simple</span></span><br><span class="line">Collecting lxml</span><br><span class="line">  Using cached <span class="symbol">https:</span>/<span class="regexp">/pypi.tuna.tsinghua.edu.cn/packages</span><span class="regexp">/39/</span><span class="number">2</span>b/<span class="number">0</span>a66d5436f237aff76b91e68b4d8c041d145ad0a2cdeefe2c42f76ba2857/lxml-<span class="number">4.5</span>.<span class="number">0</span>.tar.gz (<span class="number">4.5</span> MB)</span><br><span class="line">Installing collected <span class="symbol">packages:</span> lxml</span><br><span class="line">    Running setup.py install <span class="keyword">for</span> lxml ... done</span><br><span class="line">Successfully installed lxml-<span class="number">4.5</span>.<span class="number">0</span></span><br><span class="line">$ pip install pyquery</span><br><span class="line">Looking in <span class="symbol">indexes:</span> <span class="symbol">https:</span>/<span class="regexp">/pypi.tuna.tsinghua.edu.cn/simple</span></span><br><span class="line">Collecting pyquery</span><br><span class="line">  Downloading <span class="symbol">https:</span>/<span class="regexp">/pypi.tuna.tsinghua.edu.cn/packages</span><span class="regexp">/78/</span><span class="number">43</span>/<span class="number">95</span>d42e386c61cb639d1a0b94f0c0b9f0b7d6b981ad3c043a836c8b5bc68b/pyquery-<span class="number">1.4</span>.<span class="number">1</span>-py2.py3-none-any.whl (<span class="number">22</span> kB)</span><br><span class="line">Requirement already <span class="symbol">satisfied:</span> lxml&gt;=<span class="number">2.1</span> in /data/data/com.termux/files/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">python3</span>.8/<span class="title">site</span>-<span class="title">packages</span> (<span class="title">from</span> <span class="title">pyquery</span>) (4.5.0)</span></span><br><span class="line">Requirement already <span class="symbol">satisfied:</span> cssselect&gt;<span class="number">0.7</span>.<span class="number">9</span> in /data/data/com.termux/files/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">python3</span>.8/<span class="title">site</span>-<span class="title">packages</span> (<span class="title">from</span> <span class="title">pyquery</span>) (1.1.0)</span></span><br><span class="line">Installing collected <span class="symbol">packages:</span> pyquery</span><br><span class="line">Successfully installed pyquery-<span class="number">1.4</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<p>同时在Python中测试导入PyQuery正常：</p>
+<p>同时在Python中测试导入PyQuery正常: </p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">$ python</span><br><span class="line">Python <span class="number">3.8</span><span class="number">.0</span> (<span class="keyword">default</span>, Dec  <span class="number">5</span> <span class="number">2019</span>, <span class="number">10</span>:<span class="number">53</span>:<span class="number">43</span>)</span><br><span class="line">[Clang <span class="number">8.0</span><span class="number">.7</span> (https:<span class="comment">//android.googlesource.com/toolchain/clang b55f2d4ebfd35bf6 on linux</span></span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery as pq</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>Termux: 0.83 (Google Play)</strong><br><strong>Python: 3.8.0</strong><br><strong>pip: 20.0.2</strong><br><strong>OS: Andriod 6.0.1</strong></p>
@@ -130,25 +130,25 @@
     <title>TermuxStart</title>
     <url>/2020/04/04/TermuxStart/</url>
     <content><![CDATA[<h1 id="Termux-入门"><a href="#Termux-入门" class="headerlink" title="Termux 入门"></a>Termux 入门</h1><p><img src="/img/termux-1.png" alt="Termux"></p>
-<p>最近开始接触Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。<br>本篇作为入门，先粗略介绍一下软件和操作。  </p>
+<p>最近开始接触 Termux，无论是界面还是功能完整性我都比较满意，准备开个坑记录一下。<br>本篇作为入门，先粗略介绍一下软件和操作。  </p>
 <blockquote>
 <p>本篇内容参考了博客文章<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程-国光</a>，首先进行感谢。</p>
 </blockquote>
-<h2 id="1-Termux简介"><a href="#1-Termux简介" class="headerlink" title="1.Termux简介"></a>1.Termux简介</h2><p><code>Termux</code>是一个<strong>Android</strong>平台上的终端模拟器，自带<strong>Linux</strong>运行环境，无需root权限即可使用。通过内置的<strong>APT</strong>包管理器，可以如Linux系统一样配置<strong>Python</strong>，<strong>MySQL</strong>，<strong>PHP</strong>，<strong>NGINX</strong>等，便于在手机、平板等移动设备上进行编程、调试等工作。</p>
+<h2 id="1-Termux简介"><a href="#1-Termux简介" class="headerlink" title="1.Termux简介"></a>1.Termux简介</h2><p><code>Termux</code>是一个 <code>Android</code> 平台上的终端模拟器，自带 <code>Linux</code> 运行环境，无需 root 权限即可使用。通过内置的 <code>APT</code> 包管理器，可以如 Linux 系统一样配置 <code>Python</code>，<code>MySQL</code>，<code>PHP</code>，<code>NGINX</code> 等，便于在手机、平板等移动设备上进行编程、调试等工作。</p>
 <a id="more"></a>
 <p>更多信息可前往<a href="https://termux.com/" target="_blank" rel="noopener">Termux 官网</a>、<a href="https://github.com/termux/termux-app" target="_blank" rel="noopener">Turmux GitHub项目</a>。</p>
-<p>安装包获取地址：</p>
+<p>安装包获取地址:</p>
 <ul>
 <li><a href="https://play.google.com/store/apps/details?id=com.termux" target="_blank" rel="noopener">Google Play</a></li>
 <li><a href="https://f-droid.org/en/packages/com.termux/" target="_blank" rel="noopener">F-Droid</a></li>
 <li><a href="https://store.nethunter.com/en/packages/com.termux/" target="_blank" rel="noopener">Kali Nethunter Store</a></li>
 </ul>
-<h2 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2.基本操作"></a>2.基本操作</h2><p>初始时Termux主界面如下：<br><img src="/img/termux-2.jpg" alt="Termux主界面"><br>与普通终端模拟器类似，点击屏幕即可呼出键盘输入命令，不同的是，行首处没有显示当前路径，这可能是由于Termux运行环境是建立在Android系统上的缘故，路径和权限都会与原生Linux都会有所不同。在终端输入<code>pwd</code>即可显示当前路径。</p>
-<p>长按光标显示弹出式菜单，包含复制、粘贴、更多，此时可移动光标选择需要复制的范围。<br>菜单选项如下：</p>
+<h2 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2.基本操作"></a>2.基本操作</h2><p>初始时 Termux 主界面如下：<br><img src="/img/termux-2.jpg" alt="Termux主界面"><br>与普通终端模拟器类似，点击屏幕即可呼出键盘输入命令，不同的是，行首处没有显示当前路径，这可能是由于 Termux 运行环境是建立在 Android 系统上的缘故，路径和权限都会与原生Linux都会有所不同。在终端输入<code>pwd</code>即可显示当前路径。</p>
+<p>长按光标显示弹出式菜单，包含复制、粘贴、更多，此时可移动光标选择需要复制的范围。<br>菜单选项如下: </p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--	Copy: 复制</span></span><br><span class="line"><span class="comment">--	Paste: 粘贴</span></span><br><span class="line"><span class="comment">--	More:</span></span><br><span class="line">		<span class="keyword">Select</span> <span class="keyword">URL</span>: 选择网址</span><br><span class="line">		<span class="keyword">Share</span> transcipt: 分享终端输出内容</span><br><span class="line">		Rest: 重置终端</span><br><span class="line">		<span class="keyword">Kill</span> process: 结束会话进程</span><br><span class="line">		<span class="keyword">Style</span>: 显示风格(需要安装Termux:<span class="keyword">Style</span>)</span><br><span class="line">		<span class="keyword">Keep</span> screen <span class="keyword">on</span>: 屏幕常亮</span><br><span class="line">		<span class="keyword">Help</span>: 帮助文档</span><br></pre></td></tr></table></figure>
 
 <p>沿屏幕左侧右滑呼出侧边栏，可以管理会话和打开键盘。<br>长按<code>KEYBOARD</code>可以打开键盘上方的功能按键栏。</p>
-<h2 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h2><h3 id="组合功能键"><a href="#组合功能键" class="headerlink" title="组合功能键"></a>组合功能键</h3><p>键盘上的<code>CTRL</code>键常常与其他按键组合作为快捷键，点击功能按键栏上的<code>CTRL</code>后再按下键盘上的按键即可实现组合功能。<br>同时，Termux使用<code>音量-</code>作为<code>CTRL</code>的物理按键，按住<code>音量-</code>再按下键盘上的按键也可以实现组合功能。<br>对应的功能如下：</p>
+<h2 id="3-快捷键"><a href="#3-快捷键" class="headerlink" title="3.快捷键"></a>3.快捷键</h2><h3 id="组合功能键"><a href="#组合功能键" class="headerlink" title="组合功能键"></a>组合功能键</h3><p>键盘上的<code>CTRL</code>键常常与其他按键组合作为快捷键，点击功能按键栏上的<code>CTRL</code>后再按下键盘上的按键即可实现组合功能。<br>同时，Termux 使用<code>音量-</code>作为<code>CTRL</code>的物理按键，按住<code>音量-</code>再按下键盘上的按键也可以实现组合功能。<br>对应的功能如下：</p>
 <ul>
 <li>CTRL+A -&gt; 移动光标至行首(HOME)</li>
 <li>CTRL+C -&gt; 中止当前进程</li>
@@ -158,7 +158,7 @@
 <li>CTRL+L -&gt; 清除当前屏幕内容</li>
 <li>CTRL+Z -&gt; 挂起当前进程</li>
 </ul>
-<p>由于移动设备的键盘缺失了许多功能键，如方向键等，Termux提供了<code>音量+</code>组合键实现一些特殊的功能键。组合及对应功能如下(以VU指代’音量+’)：</p>
+<p>由于移动设备的键盘缺失了许多功能键，如方向键等，Termux 提供了<code>音量+</code>组合键实现一些特殊的功能键。组合及对应功能如下(以VU指代’音量+’)：</p>
 <ul>
 <li>VU+E -&gt; ESC</li>
 <li>VU+T -&gt; TAB</li>
@@ -179,10 +179,10 @@
 <li>VU+V -&gt; 显示音量控制菜单</li>
 <li>VU+Q -&gt; 显示功能按键栏</li>
 </ul>
-<h2 id="4-包管理器"><a href="#4-包管理器" class="headerlink" title="4.包管理器"></a>4.包管理器</h2><p>Termux支持<strong>APT</strong>包管理器，可直接使用apt命令进行安装、卸载、更新等操作，由于Termux是独立的环境，安装包不需要root权限，也不会影响系统软件。<br>Termux还支持使用pkg命令进行包管理，pkg命令可以兼容apt命令，可以作为apt命令的替代，详细说明可以通过<code>pkg hlep</code>查看。常用的pkg命令如下：</p>
+<h2 id="4-包管理器"><a href="#4-包管理器" class="headerlink" title="4.包管理器"></a>4.包管理器</h2><p>Termux 支持 <strong>APT</strong> 包管理器，可直接使用 apt 命令进行安装、卸载、更新等操作，由于 Termux 是独立的环境，安装包不需要 root 权限，也不会影响系统软件。<br>Termux 还支持使用 pkg 命令进行包管理，pkg 命令可以兼容 apt 命令，可以作为 apt 命令的替代，详细说明可以通过<code>pkg hlep</code>查看。常用的 pkg 命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pkg search &lt;query&gt;			搜索包</span><br><span class="line">pkg install &lt;package&gt;			安装包</span><br><span class="line">pkg uninstall &lt;package&gt;			卸载包</span><br><span class="line">pkg reinstall &lt;package&gt;			重新安装包</span><br><span class="line">pkg update				更新源</span><br><span class="line">pkg upgrade				升级软件包</span><br><span class="line">pkg list-all				列出所有可用包</span><br><span class="line">pkg list-installed			列出已安装包</span><br><span class="line">pkg shoe &lt;package&gt;			显示包详细信息</span><br><span class="line">pkg files &lt;package&gt;			显示包相关文件</span><br></pre></td></tr></table></figure>
 
-<h2 id="5-环境变量"><a href="#5-环境变量" class="headerlink" title="5.环境变量"></a>5.环境变量</h2><p>由于Termux是运行在Android系统上的Linux环境，其环境变量独立与系统，同时提供了几个预设变量便于执行命令。</p>
+<h2 id="5-环境变量"><a href="#5-环境变量" class="headerlink" title="5.环境变量"></a>5.环境变量</h2><p>由于 Termux 是运行在 Android 系统上的 Linux 环境，其环境变量独立与系统，同时提供了几个预设变量便于执行命令。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line">/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$HOME</span></span><br><span class="line">/data/data/com.termux/files/home</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$PREFIX</span></span><br><span class="line">/data/data/com.termux/files/usr</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>Termux: 0.83 (Google Play)</strong><br><strong>OS: Andriod 6.0.1</strong></p>
@@ -203,12 +203,12 @@
     <content><![CDATA[<h1 id="Markdown-高级功能"><a href="#Markdown-高级功能" class="headerlink" title="Markdown 高级功能"></a>Markdown 高级功能</h1><blockquote>
 <p>本篇内容参考了<a href="https://www.runoob.com/markdown/md-advance.html" target="_blank" rel="noopener">Markdown 高级技巧-菜鸟教程</a>，首先进行感谢。</p>
 </blockquote>
-<h2 id="1-符号转义"><a href="#1-符号转义" class="headerlink" title="1.符号转义"></a>1.符号转义</h2><p>Markdown语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号<code>\</code>，同时通过该符号所设置的格式也不会被解析。  </p>
+<h2 id="1-符号转义"><a href="#1-符号转义" class="headerlink" title="1.符号转义"></a>1.符号转义</h2><p><code>Markdown</code>语法通过特殊符号实现，当需要单独显示这些符号时，可在特殊符号前增加转义符号<code>\</code>，同时通过该符号所设置的格式也不会被解析。  </p>
 <figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">**加粗**</span><br><span class="line"><span class="symbol">\*</span><span class="symbol">\*</span>转义<span class="symbol">\*</span><span class="symbol">\*</span></span><br></pre></td></tr></table></figure>
 <p><strong>加粗</strong><br>**转义**  </p>
 <a id="more"></a>
 
-<p>Markdown中需要使用转义显示的符号如下：  </p>
+<p>Markdown 中需要使用转义显示的符号如下：  </p>
 <table>
 <thead>
 <tr>
@@ -265,7 +265,7 @@
 <td align="center">感叹号</td>
 </tr>
 </tbody></table>
-<h2 id="2-公式"><a href="#2-公式" class="headerlink" title="2.公式"></a>2.公式</h2><p>在Markdown中插入公式前，需要开启Mathjax公式渲染。</p>
+<h2 id="2-公式"><a href="#2-公式" class="headerlink" title="2.公式"></a>2.公式</h2><p>在 Markdown 中插入公式前，需要开启 Mathjax 公式渲染。</p>
 <p><strong>行内公式：</strong></p>
 <figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">函数：<span class="symbol">$</span>f(x)=ax+b<span class="symbol">$</span></span><br></pre></td></tr></table></figure>
 
@@ -273,17 +273,17 @@
 <p><strong>单行公式：</strong></p>
 <figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span>E=mc^<span class="number">2</span><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span>\<span class="built-in">sin</span>(\alpha)^&#123;\theta&#125;=\sum_&#123;i=<span class="number">0</span>&#125;^&#123;n&#125;(x^i + \<span class="built-in">cos</span>(f))<span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
 <p>$$E=mc^2$$<br>$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$</p>
-<p><strong>多行公式：</strong><br>使用LaTex格式公式</p>
+<p><strong>多行公式：</strong><br>使用 LaTex 格式公式</p>
 <figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">f(x) = <span class="symbol">\i</span>nt_&#123;-<span class="symbol">\i</span>nfty&#125;^<span class="symbol">\i</span>nfty</span><br><span class="line">    <span class="symbol">\h</span>at f(<span class="symbol">\x</span>i)<span class="symbol">\,</span>e^&#123;2 <span class="symbol">\p</span>i i <span class="symbol">\x</span>i x&#125;</span><br><span class="line">    <span class="symbol">\,</span>d<span class="symbol">\x</span>i</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
 
 <p>$$<br>f(x) = \int_{-\infty}^\infty<br>    \hat f(\xi),e^{2 \pi i \xi x}<br>    ,d\xi<br>$$</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">mathbf</span><span class="string">&#123;V&#125;</span></span>_1 <span class="tag">\<span class="name">times</span></span> <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;V&#125;</span></span>_2 =  <span class="tag">\<span class="name">begin</span><span class="string">&#123;vmatrix&#125;</span></span> </span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">mathbf</span><span class="string">&#123;i&#125;</span></span> &amp; <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;j&#125;</span></span> &amp; <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;k&#125;</span></span> <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial X&#125;</span><span class="string">&#123;\partial u&#125;</span></span> &amp;  <span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial Y&#125;</span><span class="string">&#123;\partial u&#125;</span></span> &amp; 0 <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial X&#125;</span><span class="string">&#123;\partial v&#125;</span></span> &amp;  <span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial Y&#125;</span><span class="string">&#123;\partial v&#125;</span></span> &amp; 0 <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;vmatrix&#125;</span></span></span></span><br><span class="line"><span class="formula">$&#123;$tep1&#125;&#123;<span class="tag">\<span class="name">style</span><span class="string">&#123;visibility:hidden&#125;</span><span class="string">&#123;(x+1)(x+1)&#125;</span></span>&#125;</span></span><br><span class="line"><span class="formula">$$</span></span><br><span class="line"></span><br><span class="line">注：由于Hexo Markdown渲染问题，LaTex换行符<span class="tag">\<span class="name">\</span></span>需要改写成<span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span>才能被正确识别</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">mathbf</span><span class="string">&#123;V&#125;</span></span>_1 <span class="tag">\<span class="name">times</span></span> <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;V&#125;</span></span>_2 =  <span class="tag">\<span class="name">begin</span><span class="string">&#123;vmatrix&#125;</span></span> </span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">mathbf</span><span class="string">&#123;i&#125;</span></span> &amp; <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;j&#125;</span></span> &amp; <span class="tag">\<span class="name">mathbf</span><span class="string">&#123;k&#125;</span></span> <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial X&#125;</span><span class="string">&#123;\partial u&#125;</span></span> &amp;  <span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial Y&#125;</span><span class="string">&#123;\partial u&#125;</span></span> &amp; 0 <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial X&#125;</span><span class="string">&#123;\partial v&#125;</span></span> &amp;  <span class="tag">\<span class="name">frac</span><span class="string">&#123;\partial Y&#125;</span><span class="string">&#123;\partial v&#125;</span></span> &amp; 0 <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;vmatrix&#125;</span></span></span></span><br><span class="line"><span class="formula">$&#123;$tep1&#125;&#123;<span class="tag">\<span class="name">style</span><span class="string">&#123;visibility:hidden&#125;</span><span class="string">&#123;(x+1)(x+1)&#125;</span></span>&#125;</span></span><br><span class="line"><span class="formula">$$</span></span><br><span class="line"></span><br><span class="line">注: 由于 Hexo Markdown 渲染问题，LaTex 换行符<span class="tag">\<span class="name">\</span></span>需要改写成<span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">\</span></span>才能被正确识别</span><br></pre></td></tr></table></figure>
 <p>$$<br>\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}<br>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\<br>\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\<br>\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \\<br>\end{vmatrix}<br>${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}<br>$$</p>
-<h2 id="3-流程图"><a href="#3-流程图" class="headerlink" title="3.流程图"></a>3.流程图</h2><p>Hexo默认不支持Markdown流程图，需要添加支持：</p>
+<h2 id="3-流程图"><a href="#3-流程图" class="headerlink" title="3.流程图"></a>3.流程图</h2><p>Hexo 默认不支持 Markdown 流程图，需要添加支持：</p>
 <figure class="highlight processing"><table><tr><td class="code"><pre><span class="line">npm install --<span class="built_in">save</span> hexo-<span class="built_in">filter</span>-flowchart</span><br></pre></td></tr></table></figure>
 
 <p>安装完成后，重启<code>hexo server</code>即可启用流程图支持</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">``` \flow</span><br><span class="line"><span class="attribute">st</span>=&gt;start: 用户登陆</span><br><span class="line"><span class="attribute">op</span>=&gt;operation: 登陆操作</span><br><span class="line"><span class="attribute">cond</span>=&gt;condition: 登陆成功 <span class="literal">Yes</span> <span class="keyword">or</span> <span class="literal">No</span>?</span><br><span class="line"><span class="attribute">e</span>=&gt;end: 进入后台</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(<span class="literal">yes</span>)-&gt;e</span><br><span class="line">cond(<span class="literal">no</span>)-&gt;op</span><br><span class="line">```</span><br><span class="line">注：flow前的\是为了防止代码被解析，使用时须去掉</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">``` \flow</span><br><span class="line"><span class="attribute">st</span>=&gt;start: 用户登陆</span><br><span class="line"><span class="attribute">op</span>=&gt;operation: 登陆操作</span><br><span class="line"><span class="attribute">cond</span>=&gt;condition: 登陆成功 <span class="literal">Yes</span> <span class="keyword">or</span> <span class="literal">No</span>?</span><br><span class="line"><span class="attribute">e</span>=&gt;end: 进入后台</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(<span class="literal">yes</span>)-&gt;e</span><br><span class="line">cond(<span class="literal">no</span>)-&gt;op</span><br><span class="line">```</span><br><span class="line">注: flow 前的\是为了防止代码被解析，使用时须去掉</span><br></pre></td></tr></table></figure>
 
 
 <div id="flowchart-0" class="flow-chart"></div>
@@ -291,7 +291,7 @@
 <p>流程图使用<code>flow</code>语法，可分为两部分，分别定义模块和模块之间的连接。<br><strong>定义模块</strong></p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">tag</span>=&gt;<span class="built_in">type</span>: conten<span class="variable">t:</span>&gt;url</span><br></pre></td></tr></table></figure>
 
-<p>其中<code>tag</code>为模块名，<code>type</code>为模块类型，共有6种：</p>
+<p>其中<code>tag</code>为模块名，<code>type</code>为模块类型，共有 6 种：</p>
 <table>
 <thead>
 <tr>
@@ -326,7 +326,7 @@
 </tbody></table>
 <p><code>content</code>指框图种显示的文本，注意<code>type:</code>与文本之间须有一个空格。<br><code>url</code>是与文本绑定的链接。  </p>
 <p><strong>定义连接</strong></p>
-<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">tga1</span>-&gt;</span>tag2</span><br><span class="line"><span class="function"><span class="title">tag1</span>-&gt;</span><span class="function"><span class="title">tag2</span>-&gt;</span>tag3</span><br><span class="line"></span><br><span class="line">注：连接可两两配对分开定义，也可连续定义</span><br></pre></td></tr></table></figure>
+<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">tga1</span>-&gt;</span>tag2</span><br><span class="line"><span class="function"><span class="title">tag1</span>-&gt;</span><span class="function"><span class="title">tag2</span>-&gt;</span>tag3</span><br><span class="line"></span><br><span class="line">注: 连接可两两配对分开定义，也可连续定义</span><br></pre></td></tr></table></figure>
 
 <p>使用<code>-&gt;</code>连接两个模块，对于<code>condition</code>类型，需要分别对两个分支指定连接。</p>
 <figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">condition1<span class="function"><span class="params">(<span class="literal">yes</span>)</span>-&gt;</span>tag1</span><br><span class="line">condition1<span class="function"><span class="params">(<span class="literal">no</span>)</span>-&gt;</span>tag2</span><br></pre></td></tr></table></figure>
@@ -353,10 +353,10 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
     <content><![CDATA[<h1 id="使用-CNAME-文件解决-Hexo-发布后-GitHub-Pages-自定义域名失效"><a href="#使用-CNAME-文件解决-Hexo-发布后-GitHub-Pages-自定义域名失效" class="headerlink" title="使用 CNAME 文件解决 Hexo 发布后 GitHub Pages 自定义域名失效"></a>使用 CNAME 文件解决 Hexo 发布后 GitHub Pages 自定义域名失效</h1><blockquote>
 <p>本篇内容参考了博客文章<a href="https://www.xuxusheng.com/post/hexo发布之后gitpage自定义域名失效" target="_blank" rel="noopener">hexo发布之后gitpage自定义域名失效-许盛</a>，首先进行感谢。</p>
 </blockquote>
-<p>使用Hexo将博客托管到GitHub Pages，每次使用 <code>hexo deploy</code> 发布后，使用原域名访问博客出现404  </p>
-<p>检查Settings-Github Pages下的Custom domain，发现原自定义域名被清空，重新填入后恢复访问  </p>
-<p>为了解决这种情况，可在source文件夹下新建CNAME文件，文件内填入自定义域名，重新发布  </p>
-<p><strong>注意：CNAME文件无后缀，文件内容仅填入域名</strong></p>
+<p>使用<code>Hexo</code>将博客托管到 GitHub Pages，每次使用 <code>hexo deploy</code> 发布后，使用原域名访问博客出现 404  </p>
+<p>检查 “Settings-Github Pages” 下的 Custom domain，发现原自定义域名被清空，重新填入后恢复访问  </p>
+<p>为了解决这种情况，可在 source 文件夹下新建 CNAME 文件，文件内填入自定义域名，重新发布  </p>
+<p><strong>注意：CNAME 文件无后缀，文件内容仅填入域名</strong></p>
 <hr>
 <p><strong>Hexo: 4.2.0</strong><br><strong>OS: Win10 1909</strong></p>
 <hr>
@@ -373,11 +373,11 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
   <entry>
     <title>MarkdownHTML</title>
     <url>/2020/03/19/MarkdownHTML/</url>
-    <content><![CDATA[<h1 id="Markdown-HTML-标签"><a href="#Markdown-HTML-标签" class="headerlink" title="Markdown HTML 标签"></a>Markdown HTML 标签</h1><p>Markdown可以解析HMTL标签，因此可以使用HTML标签实现Markdown基本语法，同时实现一些Markdown不支持的功能</p>
+    <content><![CDATA[<h1 id="Markdown-HTML-标签"><a href="#Markdown-HTML-标签" class="headerlink" title="Markdown HTML 标签"></a>Markdown HTML 标签</h1><p>Markdown 可以解析 HMTL 标签，因此可以使用 HTML 标签实现 Markdown 基本语法，同时实现一些 Markdown 不支持的功能</p>
 <blockquote>
 <p>本篇内容参考了博客文章<a href="https://wuchenxu.com/2015/12/30/Markdown-html-compare/" target="_blank" rel="noopener">Markdown语法对应的HTML标签实现-Wu Chenxu</a>，首先进行感谢。</p>
 </blockquote>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>使用HTML标签实现多级标题</p>
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>使用 HTML 标签实现多级标题</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> 标题 <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span> 标题 <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span> 标题 <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h1> 标题 </h1>
@@ -386,35 +386,35 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
 
 <a id="more"></a>
 
-<h2 id="2-格式"><a href="#2-格式" class="headerlink" title="2.格式"></a>2.格式</h2><p>使用HTML标签实现文字格式设置</p>
+<h2 id="2-格式"><a href="#2-格式" class="headerlink" title="2.格式"></a>2.格式</h2><p>使用 HTML 标签实现文字格式设置</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span> 斜体 <span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span>&gt;</span> 斜体 <span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span> 粗体 <span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span> 粗体 <span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">del</span>&gt;</span> 删除线 <span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">s</span>&gt;</span> 删除线 <span class="tag">&lt;/<span class="name">s</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ins</span>&gt;</span> 下划线 <span class="tag">&lt;/<span class="name">ins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">u</span>&gt;</span> 下划线 <span class="tag">&lt;/<span class="name">u</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><em> 斜体 </em><br><i> 斜体 </i><br><strong> 粗体 </strong><br><b> 粗体 </b><br><del> 删除线 </del><br><s> 删除线 </s><br><ins> 下划线 </ins><br><u> 下划线 </u>  </p>
-<p>利用HTML标签实现上下标</p>
+<p>利用 HTML 标签实现上下标</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">H<span class="tag">&lt;<span class="name">sub</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sub</span>&gt;</span>O</span><br><span class="line">E=mc<span class="tag">&lt;<span class="name">sup</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>H<sub>2</sub>O<br>E=mc<sup>2</sup>  </p>
-<p>利用HTML标签设置字体和颜色</p>
+<p>利用 HTML 标签设置字体和颜色</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">'4'</span> <span class="attr">color</span>=<span class="string">'blue'</span> <span class="attr">face</span>=<span class="string">'KaiTi'</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><font size='4' color='blue' face='KaiTi'>Hello World</font>  </p>
-<h2 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h2><p>利用HTML标签实现引用嵌套</p>
+<h2 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h2><p>利用 HTML 标签实现引用嵌套</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span> 引用 <span class="tag">&lt;<span class="name">blockquote</span>&gt;</span> 引用 <span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span> 引用 <span class="tag">&lt;<span class="name">q</span>&gt;</span> 引用 <span class="tag">&lt;/<span class="name">q</span>&gt;</span><span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote> 引用 <blockquote> 引用 </blockquote></blockquote>  
 <q> 引用 <q> 引用 </q></q>  
 
-<h2 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h2><p>利用HTML标签设置分割线</p>
+<h2 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h2><p>利用 HTML 标签设置分割线</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <hr />  
 
-<h2 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h2><p>利用HTML标签设置图片格式</p>
+<h2 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h2><p>利用 HTML 标签设置图片格式</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png"</span> <span class="attr">alt</span>=<span class="string">"QB.png"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <img src="https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png" alt="QB.png" width="500" height="500" />  
 
-<p>还可以利用HTML为图片嵌入超链接</p>
+<p>还可以利用 HTML 为图片嵌入超链接</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.bilibili.com/bangumi/media/md28220105"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png"</span>&gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://www.bilibili.com/bangumi/media/md28220105" target="_blank" rel="noopener"><img src="https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png"> </a>  </p>
-<h2 id="6-超链接"><a href="#6-超链接" class="headerlink" title="6.超链接"></a>6.超链接</h2><p>利用HTML标签添加超链接</p>
+<h2 id="6-超链接"><a href="#6-超链接" class="headerlink" title="6.超链接"></a>6.超链接</h2><p>利用 HTML 标签添加超链接</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.bilibili.com"</span>&gt;</span> BiliBili <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://www.bilibili.com" target="_blank" rel="noopener"> BiliBili </a>  </p>
-<h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><p>利用HTML标签实现列表<br>无序列表</p>
+<h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><p>利用 HTML 标签实现列表<br>无序列表</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> Apple <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> Banana <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> Grape <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
   <li> Apple </li>
@@ -430,7 +430,7 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
   <li> Where </li>
 </ol>  
 
-<h2 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h2><p>利用HTML标签实现表格</p>
+<h2 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h2><p>利用 HTML 标签实现表格</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border.</span>'<span class="attr">1</span>' <span class="attr">summar</span>=<span class="string">'students\'</span> <span class="attr">list</span>'</span></span><br><span class="line">  &lt;caption&gt; List &lt;/caption&gt;</span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span> Name <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span> Age <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span> Grade <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span> John <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span> 12 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span> 7 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span> Mike <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span> 10 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span> 5 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table border.'1' summar="students' list"
   <caption> List </caption>
@@ -451,7 +451,7 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
   </tr>
 </table>
 
-<p>HTML表格还可以设置列宽、对齐方式、单元格填充、背景图片等属性</p>
+<p>HTML 表格还可以设置列宽、对齐方式、单元格填充、背景图片等属性</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">width</span>=<span class="string">20%</span>&gt;</span> 列宽 width=20% <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">width</span>=<span class="string">45%</span> <span class="attr">style</span>=<span class="string">"text-align:center"</span>&gt;</span> 表头居中 style="text-align:center" <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">widht</span>=<span class="string">20%</span> <span class="attr">style</span>=<span class="string">"text-align:right"</span>&gt;</span>居右<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">widht</span>=<span class="string">5%</span>&gt;</span>列3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> &gt;</span>设置背景色 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">rgb(92,</span> <span class="attr">184</span>, <span class="attr">92</span>)&gt;</span> bgcolor=rgb(92, 184, 92) <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#eea236</span>&gt;</span> bgcolor=#eea236 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">pink</span>&gt;</span> bgcolor=pink <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>合并列<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">3</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span> 起始列colspan=2 align=center<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">3</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>合并行<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span> 起始行rowspan=3 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span> align=center 对th无效<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"text-align:right"</span>&gt;</span> style="text-align:right" <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">2</span>&gt;</span>合并行 rowspan=2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>cell<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
    <tr>
@@ -488,7 +488,7 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
    <tr><td>cell</td><td>cell</td><td>cell</td><td>cell</td></tr>
 </table>
 
-<h2 id="9-代码"><a href="#9-代码" class="headerlink" title="9.代码"></a>9.代码</h2><p>利用HTML标签设置代码<br>单行代码</p>
+<h2 id="9-代码"><a href="#9-代码" class="headerlink" title="9.代码"></a>9.代码</h2><p>利用 HTML 标签设置代码<br>单行代码</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">code</span>&gt;</span> print('Hello world') <span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code> print('Hello world') </code>  </p>
 <p>代码块</p>
@@ -513,22 +513,22 @@ function()
   <entry>
     <title>MarkdownTest</title>
     <url>/2020/03/18/MarkdownTest/</url>
-    <content><![CDATA[<h1 id="Markdown基础语法与测试"><a href="#Markdown基础语法与测试" class="headerlink" title="Markdown基础语法与测试"></a>Markdown基础语法与测试</h1><blockquote>
+    <content><![CDATA[<h1 id="Markdown-基础语法与测试"><a href="#Markdown-基础语法与测试" class="headerlink" title="Markdown 基础语法与测试"></a>Markdown 基础语法与测试</h1><blockquote>
 <p>本篇内容参考了博客文章<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">Markdown基本语法-高鸿祥</a>，首先进行感谢。</p>
 </blockquote>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>文字前加#设置标题</p>
+<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>文字前加 # 设置标题</p>
 <figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### ……</span><br></pre></td></tr></table></figure>
 <p>显示效果如下：</p>
 <blockquote>
 <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="……"><a href="#……" class="headerlink" title="……"></a>……</h5></blockquote>
 <a id="more"></a>
 
-<h2 id="2-格式"><a href="#2-格式" class="headerlink" title="2.格式"></a>2.格式</h2><p>文字两边加* \ _ \ ~设置格式</p>
+<h2 id="2-格式"><a href="#2-格式" class="headerlink" title="2.格式"></a>2.格式</h2><p>文字两边加 * \ _ \ ~ 设置格式</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*斜体*</span>   </span><br><span class="line"><span class="emphasis">_斜体_</span>  </span><br><span class="line"><span class="strong">**加粗**</span>   </span><br><span class="line"><span class="strong">__加粗__</span>  </span><br><span class="line"><span class="strong">***斜体加粗**</span>*   </span><br><span class="line"><span class="strong">___斜体加粗__</span>_  </span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：<br><em>斜体</em><br><em>斜体</em><br><strong>加粗</strong><br><strong>加粗</strong><br><strong><em>斜体加粗</em></strong><br><strong><em>斜体加粗</em></strong><br><del>删除线</del>    </p>
-<h2 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h2><p>引用文字前加&gt;，可嵌套</p>
+<p>显示效果如下:<br><em>斜体</em><br><em>斜体</em><br><strong>加粗</strong><br><strong>加粗</strong><br><strong><em>斜体加粗</em></strong><br><strong><em>斜体加粗</em></strong><br><del>删除线</del>    </p>
+<h2 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h2><p>引用文字前加 &gt;，可嵌套</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">&gt;引用</span><br><span class="line"><span class="meta">&gt;&gt;</span>引用</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt;引用</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：   </p>
+<p>显示效果如下:   </p>
 <blockquote>
 <p>引用</p>
 <blockquote>
@@ -538,31 +538,31 @@ function()
 </blockquote>
 </blockquote>
 </blockquote>
-<h2 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h2><p>三个及以上-或*</p>
+<h2 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h2><p>三个及以上 - 或 *</p>
 <figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">**<span class="strong">*</span></span><br><span class="line"><span class="strong">*</span>***<span class="strong">*</span></span><br></pre></td></tr></table></figure>
-<h2 id="显示效果如下："><a href="#显示效果如下：" class="headerlink" title="显示效果如下：   "></a>显示效果如下：   </h2><hr>
+<h2 id="显示效果如下"><a href="#显示效果如下" class="headerlink" title="显示效果如下:   "></a>显示效果如下:   </h2><hr>
 <hr>
 <hr>
-<h2 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h2><p>语法：</p>
+<h2 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h2><p>语法:</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">alt</span>](<span class="link">url "title"</span>)</span><br><span class="line">alt: 图片标签</span><br><span class="line">url: 图片地址，可为超链接或相对路径</span><br><span class="line">title: 图标标题，鼠标指向时显示</span><br></pre></td></tr></table></figure>
 
-<p>示例：</p>
+<p>示例:</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">QB.png</span>](<span class="link">https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png "QB"</span>)</span><br></pre></td></tr></table></figure>
 <p>显示效果如下：<br><img src="https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png" alt="QB.png" title="QB"></p>
-<p>注：Markdown不能指定图片高度与宽度，可使用HTML语言的img标签</p>
+<p>注: Markdown 不能指定图片高度与宽度，可使用 HTML 语言的 img 标签</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;img <span class="attribute">src</span>=<span class="string">"https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png"</span> <span class="attribute">width</span>=<span class="string">"50%"</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：<br><img src="https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png" width="50%"></p>
-<h2 id="6-超链接"><a href="#6-超链接" class="headerlink" title="6.超链接"></a>6.超链接</h2><p>语法：  </p>
+<p>显示效果如下:<br><img src="https://i.loli.net/2020/03/17/OWtxXFTC7SHUbyV.png" width="50%"></p>
+<h2 id="6-超链接"><a href="#6-超链接" class="headerlink" title="6.超链接"></a>6.超链接</h2><p>语法:  </p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">content</span>](<span class="link">url "title"</span>)</span><br><span class="line">content: 超链接显示文字</span><br><span class="line">url: 超链接</span><br><span class="line">title: (可选)</span><br></pre></td></tr></table></figure>
 <p>示例：  </p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">百度</span>](<span class="link">https://www.baidu.com</span>)</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：<br><a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a>   </p>
-<p>注：Markdown语法不支持新页面打开超链接，可使用HTML语言的a标签代替</p>
+<p>显示效果如下:<br><a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a>   </p>
+<p>注: Markdown 语法不支持新页面打开超链接，可使用 HTML 语言的 a 标签代替</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;a <span class="attribute">href</span>=<span class="string">"url"</span> <span class="attribute">target</span>=<span class="string">"_blank"</span>&gt;content&lt;/a&gt;</span><br></pre></td></tr></table></figure>
 <p>例如： <a href="https://www.baidu.com" target="_blank">百度</a>   </p>
-<h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>文字前添加-,+或*表示</p>
+<h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>文字前添加 -, + 或 * 表示</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>列表</span><br><span class="line"><span class="bullet">+ </span>列表</span><br><span class="line"><span class="bullet">* </span>列表</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：   </p>
+<p>显示效果如下:   </p>
 <ul>
 <li>列表   </li>
 </ul>
@@ -572,9 +572,9 @@ function()
 <ul>
 <li>列表   </li>
 </ul>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>文字前添加序号1.</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 列表</span><br><span class="line"><span class="number">2.</span> 列表</span><br><span class="line"><span class="number">3.</span> 列表</span><br><span class="line">注：序号与内容之间须有空格</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：   </p>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>文字前添加序号 1.</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 列表</span><br><span class="line"><span class="number">2.</span> 列表</span><br><span class="line"><span class="number">3.</span> 列表</span><br><span class="line">注: 序号与内容之间须有空格</span><br></pre></td></tr></table></figure>
+<p>显示效果如下:    </p>
 <ol>
 <li>列表  </li>
 <li>列表  </li>
@@ -593,11 +593,11 @@ function()
 </ul>
 </li>
 </ol>
-<h2 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h2><p>语法：</p>
-<figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line">title|<span class="string">title</span>|title</span><br><span class="line">---|<span class="string">:-:</span>|<span class="string">---:</span></span><br><span class="line"><span class="string">content</span>|<span class="string">content</span>|content</span><br><span class="line">content|<span class="string">content</span>|content</span><br><span class="line"></span><br><span class="line">第二行分割表头与内容，并设置内容格式</span><br><span class="line">- 占位，可多个</span><br><span class="line">内容文字默认居左，:-: 文字居中，--: 文字居右</span><br><span class="line">注：原生语法两端都有|<span class="string">，可省略</span></span><br></pre></td></tr></table></figure>
-<p>示例：  </p>
+<h2 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h2><p>语法: </p>
+<figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line">title|<span class="string">title</span>|title</span><br><span class="line">---|<span class="string">:-:</span>|<span class="string">---:</span></span><br><span class="line"><span class="string">content</span>|<span class="string">content</span>|content</span><br><span class="line">content|<span class="string">content</span>|content</span><br><span class="line"></span><br><span class="line">第二行分割表头与内容，并设置内容格式</span><br><span class="line">- 占位，可多个</span><br><span class="line">内容文字默认居左，:-: 文字居中，--: 文字居右</span><br><span class="line">注: 原生语法两端都有|<span class="string">，可省略</span></span><br></pre></td></tr></table></figure>
+<p>示例:   </p>
 <figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line">name |<span class="string"> age </span>|<span class="string"> grade</span></span><br><span class="line"><span class="string">---- </span>|<span class="string"> :-: </span>|<span class="string"> ---:</span></span><br><span class="line"><span class="string">John </span>|<span class="string"> 12  </span>|<span class="string"> 7</span></span><br><span class="line"><span class="string">Mike </span>|<span class="string"> 10  </span>|<span class="string"> 5</span></span><br></pre></td></tr></table></figure>
-<p>显示效果如下：  </p>
+<p>显示效果如下:   </p>
 <table>
 <thead>
 <tr>
@@ -617,12 +617,12 @@ function()
 <td align="right">5</td>
 </tr>
 </tbody></table>
-<h2 id="9-代码"><a href="#9-代码" class="headerlink" title="9.代码"></a>9.代码</h2><p>单行代码以反引号``包含</p>
+<h2 id="9-代码"><a href="#9-代码" class="headerlink" title="9.代码"></a>9.代码</h2><p>单行代码以反引号 ` ` 包含</p>
 <figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line"><span class="string">`code;`</span></span><br></pre></td></tr></table></figure>
-<p>代码块以三个反引号```上下包含</p>
+<p>代码块以三个反引号 ``` 上下包含</p>
 <figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">```</span><br><span class="line"><span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 
-<p>显示效果如下：<br><code>code;</code>  </p>
+<p>显示效果如下:<br><code>code;</code>  </p>
 <figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>也可使用在开头制表符(TAB)或四个空格</p>
 <pre><code>function()
