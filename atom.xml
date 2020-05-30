@@ -25,13 +25,8 @@
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;在-Win10-上配置-CUDA-及-PyTorch&quot;&gt;&lt;a href=&quot;#在-Win10-上配置-CUDA-及-PyTorch&quot; class=&quot;headerlink&quot; title=&quot;在 Win10 上配置 CUDA 及 PyTorch&quot;&gt;&lt;/a&gt;在 Win10
-        
-      
+      &lt;h1 id=&quot;在-Win10-上配置-CUDA-及-PyTorch&quot;&gt;&lt;a href=&quot;#在-Win10-上配置-CUDA-及-PyTorch&quot; class=&quot;headerlink&quot; title=&quot;在 Win10 上配置 CUDA 及 PyTorch&quot;&gt;&lt;/a&gt;在 Win10 上配置 CUDA 及 PyTorch&lt;/h1&gt;&lt;p&gt;新到了一本《PyTorch 深度学习》，准备先配置好环境，在此记录下配置过程。&lt;br&gt;本文参考了博客文章&lt;a href=&quot;https://www.jianshu.com/p/468b23f38ea6&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2019-10-04 pytorch 在win10下的安装&lt;/a&gt;，在此表示感谢。&lt;/p&gt;
+&lt;h2 id=&quot;1-Python&quot;&gt;&lt;a href=&quot;#1-Python&quot; class=&quot;headerlink&quot; title=&quot;1.Python&quot;&gt;&lt;/a&gt;1.Python&lt;/h2&gt;&lt;p&gt;之前尝试安装了UWP版本的&lt;code&gt;Python 3.7&lt;/code&gt;，目前感觉使用和升级都不是很方便，因此换回了官方安装版的&lt;code&gt;Python 3.8&lt;/code&gt;。&lt;br&gt;首先从官方来源下载&lt;a href=&quot;https://www.python.org/downloads/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python&lt;/a&gt;，此时的稳定版本是 3.8.3，以exe安装文件直接安装。&lt;/p&gt;
     
     </summary>
     

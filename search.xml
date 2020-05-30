@@ -5,7 +5,9 @@
     <url>/2020/05/30/Win10PyTorch/</url>
     <content><![CDATA[<h1 id="在-Win10-上配置-CUDA-及-PyTorch"><a href="#在-Win10-上配置-CUDA-及-PyTorch" class="headerlink" title="在 Win10 上配置 CUDA 及 PyTorch"></a>在 Win10 上配置 CUDA 及 PyTorch</h1><p>新到了一本《PyTorch 深度学习》，准备先配置好环境，在此记录下配置过程。<br>本文参考了博客文章<a href="https://www.jianshu.com/p/468b23f38ea6" target="_blank" rel="noopener">2019-10-04 pytorch 在win10下的安装</a>，在此表示感谢。</p>
 <h2 id="1-Python"><a href="#1-Python" class="headerlink" title="1.Python"></a>1.Python</h2><p>之前尝试安装了UWP版本的<code>Python 3.7</code>，目前感觉使用和升级都不是很方便，因此换回了官方安装版的<code>Python 3.8</code>。<br>首先从官方来源下载<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python</a>，此时的稳定版本是 3.8.3，以exe安装文件直接安装。</p>
-<p>默认情况下仅为当前用户安装，安装路径为<code>c:\user\username\AppData...</code>，为了便于使用，此处安装时选择了”Install fo all users”和”Add to system PATH”。</p>
+<a id="more"></a>
+
+<p>默认情况下仅为当前用户安装，安装路径为<code>c:\user\username\AppData\...</code>，为了便于使用，此处安装时选择了”<strong>为所有用户安装</strong>“和”<strong>添加到系统环境路径</strong>“。</p>
 <p><img src="/img/python_install.jpg" alt="安装选项"></p>
 <p>安装路径变为<code>C:\Program Files\Python38</code>，可通过命令行验证安装：</p>
 <figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">PS &gt; python -V</span><br><span class="line">Python <span class="number">3.8</span>.<span class="number">3</span></span><br><span class="line">PS &gt; pip -V</span><br><span class="line">pip <span class="number">20.1</span>.<span class="number">1</span> from <span class="symbol">c:</span>\program files\python38\<span class="class"><span class="keyword">lib</span>\<span class="title">site</span>-<span class="title">packages</span>\<span class="title">pip</span> (<span class="title">python</span> 3.8)</span></span><br><span class="line">PS &gt;</span><br></pre></td></tr></table></figure>
@@ -14,9 +16,9 @@
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">PS &gt; pip config <span class="keyword">set</span> <span class="keyword">global</span>.<span class="built_in">index</span>-url http<span class="variable">s:</span>//pypi.tuna.tsinghua.edu.<span class="keyword">cn</span>/simple</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-CUDA"><a href="#2-CUDA" class="headerlink" title="2.CUDA"></a>2.CUDA</h2><p>如果有<code>Nvidia</code>独显且需要使用<code>CUDA</code>加速，需要安装好 CUDA 驱动。</p>
-<p>首先如果显卡驱动版本过低，需要先到更新到合适的版本，最新驱动可在<a href="https://www.nvidia.cn/Download/index.aspx?lang=cn#" target="_blank" rel="noopener"> Nvidia 官网</a>下载。<br>然后到官网下载 <a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">CUDA</a>，根据需要选择对应平台和版本，目前的最新版本是 <code>CUDA Toolkit 10.2</code>。</p>
+<p>首先如果显卡驱动版本过低，需要先更新到合适的版本，最新驱动可在<a href="https://www.nvidia.cn/Download/index.aspx?lang=cn#" target="_blank" rel="noopener"> Nvidia 官网</a>下载。<br>然后到官网下载 <a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">CUDA</a>，根据需要选择对应平台和版本，目前的最新版本是 <code>CUDA Toolkit 10.2</code>。</p>
 <p><img src="/img/cuda_download.jpg" alt="CUDA Download"></p>
-<p>如果有需要，可同时下载<code>cuDNN</code>加速库，到<a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="noopener">官方源</a>根据需要选择版本并解压到 CUDA 安装目录即可。</p>
+<p>如果有需要，可同时下载<code>cuDNN</code>加速库，到<a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="noopener">官方源</a>根据需要选择下载并解压到 CUDA 安装目录即可。</p>
 <p>测试安装结果：</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">PS &gt; nvcc -V</span><br><span class="line">nvcc: NVIDIA (R) Cuda compiler driver</span><br><span class="line">Copyright (c) <span class="number">2005</span><span class="number">-2019</span> NVIDIA Corporation</span><br><span class="line">Built on Wed_Oct_23_19:<span class="number">32</span>:<span class="number">27</span>_Pacific_Daylight_Time_2019</span><br><span class="line">Cuda compilation tools, release <span class="number">10.2</span>, V10<span class="number">.2</span><span class="number">.89</span></span><br></pre></td></tr></table></figure>
 
@@ -26,13 +28,13 @@
 <p>选择对应版本后，同时会给出完整的安装脚本：</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">pip install torch===<span class="number">1.5</span><span class="number">.0</span> torchvision===<span class="number">0.6</span><span class="number">.0</span> -f https:<span class="comment">//download.pytorch.org/whl/torch_stable.html</span></span><br></pre></td></tr></table></figure>
 
-<p>从脚本中可得到推荐的安装版本，直接使用官方脚本可能出现下载过慢而长时间无响应的情况，而通过 TUNA 镜像源安装又会出现找不到对应版本的情况：</p>
+<p>从脚本中可得到推荐的安装版本，但是直接使用官方脚本可能出现下载过慢而长时间无响应的情况，而通过 TUNA 镜像源安装又会出现找不到对应版本的情况：</p>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">PS &gt; pip install torch==1.5.0 torchvision==0.6.0</span><br><span class="line">Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="keyword">ERROR: </span>Could not find a version that satisfies the requirement torch==1.5.0 (from versions: 0.1.2, 0.1.2.post1, 0.1.2.post2)</span><br><span class="line"><span class="keyword">ERROR: </span>No matching distribution found for torch==1.5.0</span><br></pre></td></tr></table></figure>
 
-<p>此时可采用离线安装的方法，从官方脚本中的软件库<a href="https://download.pytorch.org/whl/torch_stable.html" target="_blank" rel="noopener">https://download.pytorch.org/whl/torch_stable.html</a>中下载对应版本和平台的离线安装包，此处下载的为：</p>
+<p>此时可采用离线安装的方法，从官方脚本中的软件库<a href="https://download.pytorch.org/whl/torch_stable.html" target="_blank" rel="noopener">https://download.pytorch.org/whl/torch_stable.html</a>中下载对应版本和平台的离线安装包，此处下载的离线包为：</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">cu102/torch<span class="number">-1.5</span><span class="number">.0</span>-cp38-cp38-win_amd64.whl</span><br><span class="line">cu102/torchvision<span class="number">-0.6</span><span class="number">.0</span>-cp38-cp38-win_amd64.whl</span><br></pre></td></tr></table></figure>
 
-<p>下载完成后在文件路径执行<code>pip install filename.whl</code>进行离线安装，注意安装 whl 离线包需要提前<code>pip install wheel</code>安装 wheel 软件包。</p>
+<p>下载完成后在文件路径执行<code>pip install filename.whl</code>进行离线安装，注意安装 whl 离线包前需要使用<code>pip install wheel</code>安装 wheel 软件包。</p>
 <p>如无错误信息，在 python 中测试导入：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">PS &gt; python</span><br><span class="line">Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; import torch</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
 
